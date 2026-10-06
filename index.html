@@ -231,15 +231,35 @@ class CharacterSprite{
 const clerkActor=new CharacterSprite(3);
 function pxp(a,b,w,h,c){R(Math.round(a),Math.round(b),w,h,c)}
 function pe(px,py,col,sick,tfm,tm,sd){
- const active=tfm||sick,emo=tfm?'FEAR':sick?'PAIN':cur&&cur.found?'SUSPICIOUS':'CALM';clerkActor.update(cur&&cur.lv?'TALKING':'IDLE',emo);const z=clerkActor.pose(tm),bob=z.bob,sway=z.sway,trem=active?z.tremor:0;
- const skin=tfm?'#6f9a5a':sick?'#b4b98a':'#d9a066',ink='#17151a',hair=tfm?'#18251b':'#241a14',shirt=col||'#3b6ea5',dark='#1a2027',light='#dfe9e7';px-=14;
- /* contact shadow */pxp(px+3,py+70,24,3,'rgba(0,0,0,.38)');
- /* legs and shoes */pxp(px+8+sway,py+55+bob,7,14,dark);pxp(px+18-sway,py+55+bob,7,14,dark);pxp(px+5+sway,py+68+bob,11,4,'#16171b');pxp(px+18-sway,py+68+bob,11,4,'#16171b');
- /* torso, collar, badge */pxp(px+4+sway,py+24+bob,25,32,shirt);pxp(px+8+sway,py+25+bob,17,3,light);pxp(px+14+sway,py+29+bob,6,6,shirt===' #a5476b'?'#f0c47a':'#e8b04a');pxp(px+21+sway,py+35+bob,4,8,'#d9edf0');
- /* independently posed arms */let writing=cur&&cur.rq&&tm%500<330;let ay=py+30+bob;if(writing){pxp(px-2+sway,ay+5,8,8,shirt);pxp(px+25+sway,ay+6,8,7,shirt);pxp(px+28+sway,ay+10,7,3,skin)}else{pxp(px-3+sway,ay+4,7,18,shirt);pxp(px+28-sway,ay+3,7,18,shirt);pxp(px-4+sway,ay+20,7,4,skin);pxp(px+28-sway,ay+20,7,4,skin)}
- /* neck and head */pxp(px+12+sway+trem,py+18+bob,9,9,skin);pxp(px+5+sway+trem,py+1+bob,23,20,skin);pxp(px+3+sway+trem,py+3+bob,27,7,hair);pxp(px+5+sway+trem,py-1+bob,19,5,hair);pxp(px+2+sway+trem,py+8+bob,4,7,skin);pxp(px+26+sway+trem,py+8+bob,4,7,skin);
- /* eyebrows, eyes, nose, mouth: emotion is readable at pixel scale */let brow=emo==='FEAR'?-2:emo==='SUSPICIOUS'?2:0;pxp(px+8+sway+trem,py+8+bob,5,2,ink);pxp(px+19+sway+trem,py+8+bob,5,2,ink);if(z.blink){pxp(px+9+sway+trem,py+11+bob,4,1,ink);pxp(px+20+sway+trem,py+11+bob,4,1,ink)}else{pxp(px+9+sway+trem,py+10+bob+brow,3,3,emo==='FEAR'?'#d9453d':ink);pxp(px+20+sway+trem,py+10+bob+brow,3,3,emo==='FEAR'?'#d9453d':ink)}pxp(px+15+sway+trem,py+12+bob,3,3,'#9b5e4d');pxp(px+12+sway+trem,py+(emo==='FEAR'?16:emo==='PAIN'?15:16)+bob,9,emo==='FEAR'?3:2,emo==='FEAR'?'#321016':'#7a3b2a');
- if(tfm){pxp(px+2+sway,py+22+bob,4,2,'#d9453d');pxp(px+25+sway,py+25+bob,3,2,'#d9453d');}
+ const kind=tfm?(day%3===0?'DEMON':day%3===1?'BEAST':'INFECTED'):sick?'ZOMBIE':'HUMAN';
+ const emo=kind==='DEMON'?'FEAR':kind==='BEAST'?'RAGE':kind==='ZOMBIE'?'PAIN':cur&&cur.found?'SUSPICIOUS':'CALM';
+ clerkActor.update(cur&&cur.lv?'TALKING':'IDLE',emo);const z=clerkActor.pose(tm),frame=(Math.floor(tm/150)+sd)%4,bob=z.bob,sway=z.sway,trem=kind==='HUMAN'?0:z.tremor;
+ const skin=kind==='DEMON'?'#6f9a5a':kind==='BEAST'?'#7f6b45':kind==='ZOMBIE'?'#b4b98a':'#d9a066';
+ const ink='#17151a',hair=kind==='HUMAN'?'#241a14':'#18251b',shirt=col||'#3b6ea5',dark='#1a2027',light='#dfe9e7',eye=kind==='HUMAN'?ink:'#ff3b30';
+ px-=14;pxp(px+3,py+70,24,3,'rgba(0,0,0,.38)');
+ /* legs use stepped frames instead of moving the whole body */
+ const legA=frame===1||frame===2?1:0,legB=frame===2||frame===3?1:0;
+ pxp(px+8+sway,py+55+bob+legA,7,14,dark);pxp(px+18-sway,py+55+bob+legB,7,14,dark);pxp(px+5+sway,py+68+bob+legA,11,4,'#16171b');pxp(px+18-sway,py+68+bob+legB,11,4,'#16171b');
+ /* human clothing, badge, and regional color accents */
+ pxp(px+4+sway,py+24+bob,25,32,shirt);pxp(px+8+sway,py+25+bob,17,3,light);pxp(px+14+sway,py+29+bob,6,6,shirt==='#a5476b'?'#f0c47a':'#e8b04a');pxp(px+21+sway,py+35+bob,4,8,'#d9edf0');
+ if(kind==='HUMAN'&&sd%2===0){pxp(px+6+sway,py+22+bob,21,3,'#8d3f2f');pxp(px+10+sway,py+20+bob,13,3,'#c98b55')}
+ if(kind==='ZOMBIE'){pxp(px+8+sway,py+28+bob,8,3,'#4c634d');pxp(px+23+sway,py+42+bob,8,5,'#344934')}
+ if(kind==='BEAST'){pxp(px+3+sway,py+31+bob,6,10,'#5b4630');pxp(px+27-sway,py+31+bob,6,10,'#5b4630')}
+ /* independently moving arms and claws */
+ const writing=kind==='HUMAN'&&cur&&cur.rq&&tm%500<330,ay=py+30+bob;
+ if(writing){pxp(px-2+sway,ay+5,8,8,shirt);pxp(px+25+sway,ay+6,8,7,shirt);pxp(px+28+sway,ay+10,7,3,skin)}
+ else{pxp(px-3+sway,ay+4,7,18,shirt);pxp(px+28-sway,ay+3,7,18,shirt);pxp(px-4+sway,ay+20,7,4,skin);pxp(px+28-sway,ay+20,7,4,skin)}
+ if(kind!=='HUMAN'){pxp(px-7+sway,ay+20,5,2,'#d9453d');pxp(px+33-sway,ay+20,5,2,'#d9453d');pxp(px-8+sway,ay+22,3,2,skin);pxp(px+36-sway,ay+22,3,2,skin)}
+ /* neck, head, hair, and creature silhouettes */
+ pxp(px+12+sway+trem,py+18+bob,9,9,skin);pxp(px+5+sway+trem,py+1+bob,23,20,skin);pxp(px+3+sway+trem,py+3+bob,27,7,hair);pxp(px+5+sway+trem,py-1+bob,19,5,hair);pxp(px+2+sway+trem,py+8+bob,4,7,skin);pxp(px+26+sway+trem,py+8+bob,4,7,skin);
+ if(kind==='DEMON'){pxp(px+4+sway+trem,py-7+bob,5,7,'#5b2d2d');pxp(px+23+sway+trem,py-7+bob,5,7,'#5b2d2d');pxp(px+7+sway+trem,py-9+bob,3,4,'#d9453d');pxp(px+22+sway+trem,py-9+bob,3,4,'#d9453d')}
+ if(kind==='BEAST'){pxp(px+1+sway+trem,py+7+bob,5,7,'#6b5438');pxp(px+27+sway+trem,py+7+bob,5,7,'#6b5438');pxp(px+11+sway+trem,py+15+bob,13,5,'#5b4630')}
+ /* expressive pixel face */
+ const brow=emo==='FEAR'?-2:emo==='SUSPICIOUS'?2:emo==='RAGE'?3:0;pxp(px+8+sway+trem,py+8+bob,5,2,ink);pxp(px+19+sway+trem,py+8+bob,5,2,ink);
+ if(z.blink&&kind==='HUMAN'){pxp(px+9+sway+trem,py+11+bob,4,1,ink);pxp(px+20+sway+trem,py+11+bob,4,1,ink)}else{pxp(px+9+sway+trem,py+10+bob+brow,3,3,eye);pxp(px+20+sway+trem,py+10+bob+brow,3,3,eye)}
+ if(kind==='BEAST'){pxp(px+13+sway+trem,py+13+bob,8,5,'#241a14');pxp(px+15+sway+trem,py+14+bob,4,2,'#d9a066')}
+ else{pxp(px+15+sway+trem,py+12+bob,3,3,'#9b5e4d');pxp(px+12+sway+trem,py+(emo==='FEAR'?16:emo==='PAIN'?15:16)+bob,9,emo==='FEAR'?3:2,emo==='FEAR'?'#321016':'#7a3b2a')}
+ if(kind!=='HUMAN'){pxp(px+2+sway,py+22+bob,4,2,'#d9453d');pxp(px+25+sway,py+25+bob,3,2,'#d9453d')}
 }
 function scene(tm){tick(tm);let d=Math.min(Math.max(day-1,0),4),lab=day>=12,bk=O.bl>now(),sx=day>=10?Math.round(Math.sin(tm/70)*(day>=13?1:0)):0;
  R(0,0,320,110,lab?'#1d3a40':CL[d]);R(0,110,320,70,lab?'#16262b':FL[d]);for(let i=0;i<320;i+=20)R(i,110,1,70,'rgba(0,0,0,.18)');
