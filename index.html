@@ -25,16 +25,51 @@ canvas{display:block;width:100%;image-rendering:pixelated;background:#000}
 @media (max-width:480px){#docs{grid-template-columns:1fr}}
 #lg2{margin:6px 0;padding:6px 10px;background:#10161a;border-left:4px solid var(--am);min-height:36px;font-size:13px}#db{position:fixed;inset:0;background:rgba(5,8,10,.93);display:none;z-index:4;padding:14px;overflow:auto}#db .bx{max-width:560px;margin:auto;background:#10242c;border:3px solid #5aa7c9;padding:12px}#db input{width:100%;padding:8px;font:inherit;background:#06161c;color:#9fe;border:2px solid #5aa7c9}#db p{margin:6px 0;padding:6px;background:#0a1c22}.lk{color:#d9453d}.mkd{background:#f7e27a;outline:2px solid #c98b2a}canvas{touch-action:manipulation}
 #c{background:#050709;cursor:crosshair}
+/* ARCHIVE PIXEL SYSTEM — shared rhythm for every surface */
+body{background:radial-gradient(circle at 50% -10%,#1a252b 0,#0d1012 45%,#080a0c 100%);text-shadow:1px 1px 0 #000;letter-spacing:.01em}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.08) 3px 4px),linear-gradient(90deg,rgba(232,176,74,.04),transparent 32%,rgba(90,167,201,.04));mix-blend-mode:screen}
+#top{padding:6px 4px 8px;border-bottom:2px solid #2e3b41;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}
+#hud{color:#e8b04a;background:#11191e;border:2px solid #3b4b51;padding:4px 8px;box-shadow:2px 2px 0 #000;min-height:30px;display:inline-flex;align-items:center}
+button{border-color:#0a0c0d;box-shadow:4px 4px 0 #000, inset 2px 2px 0 rgba(255,255,255,.2);text-shadow:1px 1px 0 rgba(0,0,0,.35);transition:filter .12s steps(2),transform .12s steps(2),box-shadow .12s steps(2)}
+button:hover{filter:brightness(1.12);transform:translate(-1px,-1px);box-shadow:5px 5px 0 #000,inset 2px 2px 0 rgba(255,255,255,.25)}
+button:focus-visible{outline:3px solid #9fe;outline-offset:3px;box-shadow:0 0 0 5px rgba(232,176,74,.25),4px 4px 0 #000}
+#lg{border:2px solid #5b7077;box-shadow:3px 3px 0 #000;background:#182329;color:#e8e2cf}
+#say{position:relative;background:linear-gradient(135deg,#161f24,#101518);border:3px solid #3b4b51;box-shadow:4px 4px 0 #000, inset 0 0 0 2px #0a0d0f;padding:12px 14px;min-height:76px}
+#say:before{content:"//";position:absolute;top:4px;left:7px;color:#546a70;font-size:10px}
+#docs{gap:12px;margin-top:10px}
+.d{border:3px solid #17120d;box-shadow:4px 4px 0 #000, inset 0 0 0 2px rgba(255,255,255,.25);clip-path:polygon(0 0,96% 0,100% 7%,100% 100%,0 100%);transition:transform .12s steps(2),filter .12s steps(2)}
+.d:hover{transform:translate(-2px,-2px) rotate(-.4deg);filter:brightness(1.04)}
+.d h4{letter-spacing:.04em;color:#4b3721}.d p{border-bottom:1px dotted rgba(64,47,25,.28);padding:2px 0;cursor:pointer}.d p:hover{background:rgba(232,176,74,.2)}
+#pulse{box-shadow:3px 3px 0 #000;letter-spacing:.02em}
+#bt{padding-top:3px}
+#bt button{min-height:46px;font-weight:700;letter-spacing:.01em}
+#st{backdrop-filter:blur(2px)}
+#st div{border:3px solid #3b4b51;background:#10181d;box-shadow:7px 7px 0 #000,inset 0 0 0 2px #24343b;padding:18px;position:relative}
+#st div:before{content:"ARCHIVE / SEALED";display:block;color:#e8b04a;font-size:11px;border-bottom:2px solid #34444b;padding-bottom:7px;margin-bottom:12px}
 .cw{overflow:hidden;isolation:isolate}
 #fx{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;background:transparent!important;pointer-events:none;z-index:2}
 #pulse{margin:8px 0 0;padding:7px 10px;min-height:32px;border:2px solid #2d3940;background:#10171b;color:#9fd;font-size:12px;opacity:.94}
 #pulse strong{color:var(--am)}
-#bt button{min-height:42px;touch-action:manipulation}
+#bt button{min-height:42px;touch-action:manipulation;position:relative;overflow:visible;transition:transform .12s steps(2),filter .12s steps(2),box-shadow .12s steps(2)}
+#bt button::after{content:"";position:absolute;inset:4px;border:1px dashed rgba(255,255,255,.14);pointer-events:none}
+#bt button.stamp-target{transform:translateY(-2px);filter:brightness(1.2);box-shadow:0 0 0 3px #e8b04a,5px 5px 0 #000}
+#bt button.stamped{animation:stamp-hit .28s steps(3);}
+.stamp-mark{position:absolute;right:10px;top:50%;transform:translateY(-50%) rotate(-8deg);font-size:10px;font-weight:900;color:#7e1717;border:2px solid #9e2727;padding:2px 4px;opacity:.9;pointer-events:none;letter-spacing:.04em}
+.stamp-dock{display:flex;align-items:center;gap:10px;margin:10px 0 2px;padding:8px 10px;border:2px solid #34444b;background:#0d1519;box-shadow:3px 3px 0 #000;min-height:58px}
+.stamp-dock .dock-copy{font-size:11px;color:#9bb0b4;line-height:1.35;flex:1}.stamp-dock strong{display:block;color:#e8b04a;font-size:12px}
+#stamp{width:42px;height:42px;position:relative;flex:0 0 42px;cursor:grab;touch-action:none;user-select:none;z-index:6;filter:drop-shadow(3px 3px 0 #000);transform:translate3d(0,0,0) rotate(-5deg);transition:transform .12s steps(2),filter .12s steps(2)}
+#stamp::before{content:"";position:absolute;left:11px;top:0;width:20px;height:24px;background:#c6a26c;border:3px solid #16110d;box-shadow:inset -4px 0 #8a623c}
+#stamp::after{content:"SEAL";position:absolute;left:5px;top:22px;width:32px;height:15px;display:grid;place-items:center;background:#b72e2e;color:#f8d9b3;border:3px solid #16110d;font:bold 8px/1 monospace;letter-spacing:-.06em;box-shadow:inset 3px 0 #e35b45}
+#stamp.dragging{cursor:grabbing;filter:drop-shadow(5px 7px 0 #000);transform:translate3d(var(--dx),var(--dy),0) rotate(-14deg) scale(1.08)}
+#stamp.ready{animation:stamp-ready .8s steps(2) infinite}
+@keyframes stamp-hit{0%{transform:translateY(-2px) rotate(0)}35%{transform:translateY(5px) rotate(2deg)}70%{transform:translateY(-1px) rotate(-1deg)}100%{transform:translateY(0) rotate(0)}}
+@keyframes stamp-ready{50%{transform:translateY(-3px) rotate(-8deg)}}
+@media (prefers-reduced-motion:reduce){#stamp.ready{animation:none}#bt button.stamped{animation:none}}
 @media (max-width:480px){body{padding:6px;font-size:14px}.cw{border-width:3px}#bt{gap:7px}#bt button{flex:1 1 42%;min-height:46px}}
 </style></head><body>
 <div id="top"><span id="hud"></span><button id="lg">EN</button></div>
 <div class="cw"><canvas id="c" width="320" height="180" aria-label="Civil Registry pixel-art game scene"></canvas><canvas id="fx" width="320" height="180" aria-hidden="true"></canvas></div>
-<div id="say"></div><div id="pulse" role="status" aria-live="polite">جاهز لبدء الوردية.</div><div id="docs"></div><div id="bt"></div>
+<div id="say"></div><div id="pulse" role="status" aria-live="polite">جاهز لبدء الوردية.</div><div id="docs"></div><div id="bt"></div><div class="stamp-dock" aria-label="منطقة الختم"><div id="stamp" role="button" tabindex="0" aria-label="اسحب الختم إلى القرار المناسب" title="اسحب الختم إلى القرار المناسب"></div><div class="dock-copy"><strong>اسحب الختم إلى القرار</strong><span>Drag the seal onto a decision to stamp it</span></div></div>
 <div id="st"><div id="sb"></div></div>
 <script>
 let L='ar',day=0,ci=0,ev=0,tr=0,cur=null,tf=0,busy=0,T0=0;
@@ -84,7 +119,8 @@ if(day==0){R(0,0,320,180,'#0a0c10');x.fillStyle='#e8b04a';x.font='bold 18px mono
 function loop(tm){scene(tm);requestAnimationFrame(loop)}requestAnimationFrame(loop);
 function hud(){$('hud').textContent=day?u('day')+' '+day+'/15 — '+u('ev')+': '+ev:'Civil Registry: The Last File'}
 function say(h){$('say').innerHTML=h}
-function btn(txt,fn,c){let b=document.createElement('button');b.textContent=txt;b.className=c||'';b.onclick=fn;$('bt').appendChild(b)}
+function btn(txt,fn,c){let b=document.createElement('button');b.textContent=txt;b.className=c||'';b.dataset.stampLabel=txt;b.onclick=()=>{stampRelease(b,fn)};$('bt').appendChild(b)}
+function stampRelease(b,fn){if(window.stampBusy)return;window.stampBusy=1;b.classList.add('stamped');let m=document.createElement('span');m.className='stamp-mark';m.textContent=L==='ar'?'مختوم':'STAMPED';b.appendChild(m);snd(120,.11,'square',.04);setTimeout(()=>{fn();window.stampBusy=0},230)}
 function clr(){$('bt').innerHTML='';$('docs').innerHTML=''}
 function menu(){clr();cur=null;tf=0;say('<b>📁</b> '+(L=='ar'?'سجل مدني — مكتب رقم 4. أنت الموظف الجديد. اللي في الورق هو اللي في الحقيقة... أو لأ.':'Civil Registry — Window 4. You are the new clerk. What the paper says is the truth... or is it?'));btn(u('st'),()=>start(1));hud()}
 function start(n){day=n;ci=0;cur=null;clr();hud();if(day>4)return scn();let d=D[day-1];say('<b>📻</b> '+t(d.n));btn(u('nx'),next)}
@@ -319,5 +355,26 @@ menu();
  setInterval(()=>{if(day&&day!==15){quiet++;if(quiet>3)msg(day>=10?'الصمت يزداد... راقب المكتب قبل القرار.':'راقب المكتب: بعض الأشياء تتحرك بدون طلب.',day>=10?'The silence deepens... observe before deciding.':'Observe the office: some things move without being asked.')}},3500);
  window.addEventListener('resize',()=>{fx.width=320;fx.height=180});
  msg('جاهز لبدء الوردية.','Ready to start the shift.');
+})();
+
+<script>
+/* PHYSICAL SEAL SYSTEM — drag, inertia, target snap, and stamped feedback. */
+(()=>{
+ const seal=document.getElementById('stamp'); if(!seal)return;
+ let drag=false,pointerId=null,startX=0,startY=0,lastX=0,lastY=0,vx=0,vy=0,hover=null,raf=0;
+ const targets=()=>[...document.querySelectorAll('#bt button')];
+ const setPos=(x,y)=>{seal.style.setProperty('--dx',x+'px');seal.style.setProperty('--dy',y+'px')};
+ const clear=()=>{targets().forEach(b=>b.classList.remove('stamp-target'));hover=null};
+ const targetAt=(x,y)=>{let el=document.elementFromPoint(x,y);return el&&el.closest&&el.closest('#bt button')};
+ const move=e=>{if(!drag)return;let dx=e.clientX-startX,dy=e.clientY-startY;vx=e.clientX-lastX;vy=e.clientY-lastY;lastX=e.clientX;lastY=e.clientY;setPos(dx,dy);let t=targetAt(e.clientX,e.clientY);if(t!==hover){clear();hover=t;if(t)t.classList.add('stamp-target')}e.preventDefault()};
+ const end=e=>{if(!drag)return;drag=false;seal.classList.remove('dragging');seal.style.pointerEvents='none';seal.releasePointerCapture?.(pointerId);let t=targetAt(e.clientX,e.clientY)||hover;clear();
+   if(t){setPos(0,0);seal.classList.add('ready');t.click();setTimeout(()=>seal.classList.remove('ready'),350)}else{
+     let dx=Math.max(-18,Math.min(18,vx*2)),dy=Math.max(-10,Math.min(10,vy*2));setPos(dx,dy);cancelAnimationFrame(raf);let n=0;const settle=()=>{n++;dx*=.72;dy*=.72;setPos(dx,dy);if(n<12)raf=requestAnimationFrame(settle);else setPos(0,0)};raf=requestAnimationFrame(settle)}
+   pointerId=null;seal.style.pointerEvents='auto';e.preventDefault();
+ };
+ seal.addEventListener('pointerdown',e=>{if(window.stampBusy)return;drag=true;pointerId=e.pointerId;seal.style.pointerEvents='none';startX=lastX=e.clientX;startY=lastY=e.clientY;vx=vy=0;seal.classList.add('dragging');seal.setPointerCapture?.(pointerId);e.preventDefault()});
+ seal.addEventListener('pointermove',move);seal.addEventListener('pointerup',end);seal.addEventListener('pointercancel',end);
+ seal.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){let b=targets()[0];if(b){e.preventDefault();b.click()}}});
+ new MutationObserver(()=>{if(!drag)clear()}).observe(document.getElementById('bt'),{childList:true});
 })();
 </script></body></html>
