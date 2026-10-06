@@ -1,4 +1,7 @@
-# Civil Registry: The Last File — Animated Pixel Edition
+# Echoes Beneath the Seal — Animated Pixel Edition
+
+> كل ختم يخفي سجلًا، وكل سجل يترك صدى.
+
 
 نسخة مطوّرة من النموذج الأولي للعبة السرد التفاعلي.
 
