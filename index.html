@@ -1,8 +1,8 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Civil Registry: The Last File</title><style>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Handjet:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet"><title>Civil Registry: The Last File</title><style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#0d1012;--pap:#e9dfbf;--ink:#2a2118;--am:#e8b04a;--rd:#d9453d;--gn:#7fbf6a}
 html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
 *{box-sizing:border-box}
-body{margin:0 auto;max-width:760px;padding:8px;background:var(--bg);color:#e8e2cf;font:15px/1.55 "Courier New",monospace}
+body{margin:0 auto;max-width:760px;padding:8px;background:var(--bg);color:#e8e2cf;font:500 18px/1.35 "Handjet","Tahoma",sans-serif;text-shadow:none;letter-spacing:.015em}
 #top{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:13px;color:var(--am)}
 button{font:inherit;cursor:pointer;border:3px solid #000;background:var(--am);color:#1a1208;padding:8px 12px;box-shadow:3px 3px 0 #000}
 button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #000}
@@ -26,11 +26,11 @@ canvas{display:block;width:100%;image-rendering:pixelated;background:#000}
 #lg2{margin:6px 0;padding:6px 10px;background:#10161a;border-left:4px solid var(--am);min-height:36px;font-size:13px}#db{position:fixed;inset:0;background:rgba(5,8,10,.93);display:none;z-index:4;padding:14px;overflow:auto}#db .bx{max-width:560px;margin:auto;background:#10242c;border:3px solid #5aa7c9;padding:12px}#db input{width:100%;padding:8px;font:inherit;background:#06161c;color:#9fe;border:2px solid #5aa7c9}#db p{margin:6px 0;padding:6px;background:#0a1c22}.lk{color:#d9453d}.mkd{background:#f7e27a;outline:2px solid #c98b2a}canvas{touch-action:manipulation}
 #c{background:#050709;cursor:crosshair}
 /* ARCHIVE PIXEL SYSTEM — shared rhythm for every surface */
-body{background:radial-gradient(circle at 50% -10%,#1a252b 0,#0d1012 45%,#080a0c 100%);text-shadow:1px 1px 0 #000;letter-spacing:.01em}
+body{background:radial-gradient(circle at 50% -10%,#1a252b 0,#0d1012 45%,#080a0c 100%);text-shadow:none;letter-spacing:.015em;-webkit-font-smoothing:antialiased}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.08) 3px 4px),linear-gradient(90deg,rgba(232,176,74,.04),transparent 32%,rgba(90,167,201,.04));mix-blend-mode:screen}
 #top{padding:6px 4px 8px;border-bottom:2px solid #2e3b41;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}
-#hud{color:#e8b04a;background:#11191e;border:2px solid #3b4b51;padding:4px 8px;box-shadow:2px 2px 0 #000;min-height:30px;display:inline-flex;align-items:center}
-button{border-color:#0a0c0d;box-shadow:4px 4px 0 #000, inset 2px 2px 0 rgba(255,255,255,.2);text-shadow:1px 1px 0 rgba(0,0,0,.35);transition:filter .12s steps(2),transform .12s steps(2),box-shadow .12s steps(2)}
+#hud{color:#e8b04a;background:#11191e;border:2px solid #3b4b51;padding:4px 8px;box-shadow:2px 2px 0 #000;min-height:30px;display:inline-flex;align-items:center;font-size:17px;font-weight:600}
+button{border-color:#0a0c0d;box-shadow:4px 4px 0 #000, inset 2px 2px 0 rgba(255,255,255,.2);text-shadow:none;font-size:20px;font-weight:600;transition:filter .12s steps(2),transform .12s steps(2),box-shadow .12s steps(2)}
 button:hover{filter:brightness(1.12);transform:translate(-1px,-1px);box-shadow:5px 5px 0 #000,inset 2px 2px 0 rgba(255,255,255,.25)}
 button:focus-visible{outline:3px solid #9fe;outline-offset:3px;box-shadow:0 0 0 5px rgba(232,176,74,.25),4px 4px 0 #000}
 #lg{border:2px solid #5b7077;box-shadow:3px 3px 0 #000;background:#182329;color:#e8e2cf}
@@ -57,9 +57,11 @@ button:focus-visible{outline:3px solid #9fe;outline-offset:3px;box-shadow:0 0 0 
 .stamp-mark{position:absolute;right:10px;top:50%;transform:translateY(-50%) rotate(-8deg);font-size:10px;font-weight:900;color:#7e1717;border:2px solid #9e2727;padding:2px 4px;opacity:.9;pointer-events:none;letter-spacing:.04em}
 .stamp-dock{display:flex;align-items:center;gap:10px;margin:10px 0 2px;padding:8px 10px;border:2px solid #34444b;background:#0d1519;box-shadow:3px 3px 0 #000;min-height:58px}
 .stamp-dock .dock-copy{font-size:11px;color:#9bb0b4;line-height:1.35;flex:1}.stamp-dock strong{display:block;color:#e8b04a;font-size:12px}
-#stamp{width:42px;height:42px;position:relative;flex:0 0 42px;cursor:grab;touch-action:none;user-select:none;z-index:6;filter:drop-shadow(3px 3px 0 #000);transform:translate3d(0,0,0) rotate(-5deg);transition:transform .12s steps(2),filter .12s steps(2)}
-#stamp::before{content:"";position:absolute;left:11px;top:0;width:20px;height:24px;background:#c6a26c;border:3px solid #16110d;box-shadow:inset -4px 0 #8a623c}
-#stamp::after{content:"SEAL";position:absolute;left:5px;top:22px;width:32px;height:15px;display:grid;place-items:center;background:#b72e2e;color:#f8d9b3;border:3px solid #16110d;font:bold 8px/1 monospace;letter-spacing:-.06em;box-shadow:inset 3px 0 #e35b45}
+#stamp{width:56px;height:52px;position:relative;flex:0 0 56px;cursor:grab;touch-action:none;user-select:none;z-index:6;filter:drop-shadow(3px 3px 0 #000);transform:translate3d(0,0,0) rotate(-5deg);transition:transform .12s steps(2),filter .12s steps(2)}
+#stamp .stamp-rope{position:absolute;left:-18px;top:17px;width:25px;height:18px;border:3px solid #80603d;border-right:0;border-radius:50% 0 0 50%;box-shadow:inset 0 0 0 2px #b38b57}
+#stamp .stamp-rope:after{content:"";position:absolute;left:-7px;top:4px;width:6px;height:6px;background:#b38b57;border:2px solid #21170f}
+#stamp .stamp-handle{position:absolute;left:16px;top:0;width:24px;height:27px;background:#c6a26c;border:3px solid #16110d;box-shadow:inset -5px 0 #8a623c, inset 3px 0 #e2c68f}
+#stamp .stamp-head{position:absolute;left:6px;top:25px;width:44px;height:19px;display:grid;place-items:center;background:#b72e2e;color:#f8d9b3;border:3px solid #16110d;font:bold 11px/1 "Press Start 2P",monospace;letter-spacing:-.08em;box-shadow:inset 4px 0 #e35b45, inset -3px 0 #751b1b}
 #stamp.dragging{cursor:grabbing;filter:drop-shadow(5px 7px 0 #000);transform:translate3d(var(--dx),var(--dy),0) rotate(-14deg) scale(1.08)}
 #stamp.ready{animation:stamp-ready .8s steps(2) infinite}
 @keyframes stamp-hit{0%{transform:translateY(-2px) rotate(0)}35%{transform:translateY(5px) rotate(2deg)}70%{transform:translateY(-1px) rotate(-1deg)}100%{transform:translateY(0) rotate(0)}}
@@ -69,7 +71,7 @@ button:focus-visible{outline:3px solid #9fe;outline-offset:3px;box-shadow:0 0 0 
 </style></head><body>
 <div id="top"><span id="hud"></span><button id="lg">EN</button></div>
 <div class="cw"><canvas id="c" width="320" height="180" aria-label="Civil Registry pixel-art game scene"></canvas><canvas id="fx" width="320" height="180" aria-hidden="true"></canvas></div>
-<div id="say"></div><div id="pulse" role="status" aria-live="polite">جاهز لبدء الوردية.</div><div id="docs"></div><div id="bt"></div><div class="stamp-dock" aria-label="منطقة الختم"><div id="stamp" role="button" tabindex="0" aria-label="اسحب الختم إلى القرار المناسب" title="اسحب الختم إلى القرار المناسب"></div><div class="dock-copy"><strong>اسحب الختم إلى القرار</strong><span>Drag the seal onto a decision to stamp it</span></div></div>
+<div id="say"></div><div id="pulse" role="status" aria-live="polite">جاهز لبدء الوردية.</div><div id="docs"></div><div id="bt"></div><div class="stamp-dock" aria-label="منطقة الختم"><div id="stamp" role="button" tabindex="0" aria-label="اسحب الختم إلى القرار المناسب" title="اسحب الختم إلى القرار المناسب"><span class="stamp-rope"></span><span class="stamp-handle"></span><span class="stamp-head">SEAL</span></div><div class="dock-copy"><strong>اسحبي الختم بالحبل إلى القرار</strong><span>اسحبي الختم / Drag the seal, then release to stamp</span></div></div>
 <div id="st"><div id="sb"></div></div>
 <script>
 let L='ar',day=0,ci=0,ev=0,tr=0,cur=null,tf=0,busy=0,T0=0;
@@ -89,7 +91,7 @@ c:[{nm:{ar:'سامح رمزي',en:'Sameh Ramzy'},dob:'1977-08-30',id:'7708301',r
 {n:{ar:'الراديو: ابقوا في بيوتكم. متقربوش من المصابين. [تشويش]',en:'Radio: Remain indoors. Do not approach infected individuals. [static]'},e:{ar:'',en:''},
 c:[{nm:{ar:'محمود عيد',en:'Mahmoud Eid'},dob:'1981-12-05',id:'8112056',rec:{nm:1,dob:'1981-12-05',s:'p7'},rq:{ar:'ورقة طوارئ',en:'Emergency document'},say:{ar:'*كحة* سخن... عايز... اسمي إيه تاني؟ أنا مين؟',en:'*cough* so hot... I need... what was my name again? Who am I?'},a:'fl',w:{ar:'ملفه متعلّم "Patient 07". ده مش مواطن عادي.',en:'His file is tagged "Patient 07". This is no ordinary citizen.'},col:'#8a8a3a',sick:1}]}];
 const CL=['#cdb67e','#b8a574','#8d8566','#5d5a52','#3b2f35'],FL=['#7a6a52','#6f6049','#5a4e3e','#43392f','#2c2429'],SK=['#86c3e8','#8fb8d0','#6a7c8a','#4a4048','#6b2a2a'];
-const cv=document.getElementById('c'),x=cv.getContext('2d'),$=i=>document.getElementById(i);
+const cv=document.getElementById('c'),x=cv.getContext('2d'),$=i=>document.getElementById(i);x.imageSmoothingEnabled=false;
 const R=(a,b,w,h,c)=>{x.fillStyle=c;x.fillRect(a|0,b|0,w,h)};
 function person(px,py,col,sick,tfm,tm){let o=tfm?Math.sin(tm/40)*2:sick?Math.sin(tm/90):0,sk=tfm?'#6f9a5a':sick?'#b4b98a':'#d9a066';px+=o;
 R(px-14,py+22,28,40,col);R(px-18,py+24,5,26,col);R(px+13,py+24,5,26,col);R(px-18,py+48,5,5,sk);R(px+13,py+48,5,5,sk);
@@ -269,12 +271,12 @@ function pxp(a,b,w,h,c){R(Math.round(a),Math.round(b),w,h,c)}
 function pe(px,py,col,sick,tfm,tm,sd){
  const kind=tfm?(day%3===0?'DEMON':day%3===1?'BEAST':'INFECTED'):sick?'ZOMBIE':'HUMAN';
  const emo=kind==='DEMON'?'FEAR':kind==='BEAST'?'RAGE':kind==='ZOMBIE'?'PAIN':cur&&cur.found?'SUSPICIOUS':'CALM';
- clerkActor.update(cur&&cur.lv?'TALKING':'IDLE',emo);const z=clerkActor.pose(tm),frame=(Math.floor(tm/150)+sd)%4,bob=z.bob,sway=z.sway,trem=kind==='HUMAN'?0:z.tremor;
+ clerkActor.update(cur&&cur.lv?'TALKING':'IDLE',emo);const z=clerkActor.pose(tm),frame=(Math.floor(tm/110)+sd)%8,bob=z.bob,sway=z.sway,trem=kind==='HUMAN'?0:z.tremor;
  const skin=kind==='DEMON'?'#6f9a5a':kind==='BEAST'?'#7f6b45':kind==='ZOMBIE'?'#b4b98a':'#d9a066';
  const ink='#17151a',hair=kind==='HUMAN'?'#241a14':'#18251b',shirt=col||'#3b6ea5',dark='#1a2027',light='#dfe9e7',eye=kind==='HUMAN'?ink:'#ff3b30';
  px-=14;pxp(px+3,py+70,24,3,'rgba(0,0,0,.38)');
  /* legs use stepped frames instead of moving the whole body */
- const legA=frame===1||frame===2?1:0,legB=frame===2||frame===3?1:0;
+ const legA=[0,0,1,1,0,-1,-1,0][frame],legB=[0,1,1,0,-1,-1,0,0][frame];
  pxp(px+8+sway,py+55+bob+legA,7,14,dark);pxp(px+18-sway,py+55+bob+legB,7,14,dark);pxp(px+5+sway,py+68+bob+legA,11,4,'#16171b');pxp(px+18-sway,py+68+bob+legB,11,4,'#16171b');
  /* human clothing, badge, and regional color accents */
  pxp(px+4+sway,py+24+bob,25,32,shirt);pxp(px+8+sway,py+25+bob,17,3,light);pxp(px+14+sway,py+29+bob,6,6,shirt==='#a5476b'?'#f0c47a':'#e8b04a');pxp(px+21+sway,py+35+bob,4,8,'#d9edf0');
@@ -343,7 +345,7 @@ menu();
 </script><script>
 /* FINAL POLISH LAYER — additive systems; the original story and systems remain intact. */
 (()=>{
- const fx=document.getElementById('fx'),fxc=fx.getContext('2d'),pulse=document.getElementById('pulse');
+ const fx=document.getElementById('fx'),fxc=fx.getContext('2d'),pulse=document.getElementById('pulse');fxc.imageSmoothingEnabled=false;
  let bits=[],last=performance.now(),quiet=0;
  const msg=(ar,en)=>{if(pulse)pulse.innerHTML='<strong>◈ '+(L==='ar'?ar:en)+'</strong>'};
  const burst=(x,y,color='#e8b04a',n=8)=>{for(let i=0;i<n;i++)bits.push({x,y,vx:(Math.random()-.5)*1.8,vy:(Math.random()-.8)*1.8,life:18+Math.random()*18,c:color,s:1+Math.random()*2})};
