@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Civil Registry: The Last File</title><style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#0d1012;--pap:#e9dfbf;--ink:#2a2118;--am:#e8b04a;--rd:#d9453d;--gn:#7fbf6a}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:760px;padding:8px;background:var(--bg);color:#e8e2cf;font:15px/1.55 "Courier New",monospace}
+#top{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:13px;color:var(--am)}
+button{font:inherit;cursor:pointer;border:3px solid #000;background:var(--am);color:#1a1208;padding:8px 12px;box-shadow:3px 3px 0 #000}
+button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #000}
+#lg{background:#2b3238;color:#e8e2cf;padding:4px 10px;font-size:13px}
+.cw{position:relative;border:4px solid #000;box-shadow:0 0 0 2px #3a4249}
+canvas{display:block;width:100%;image-rendering:pixelated;background:#000}
+.cw:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px)}
+#say{margin:8px 0;padding:10px 12px;background:#161b1f;border:3px solid #3a4249;min-height:70px}
+#say b{color:var(--am)}
+#docs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.d{background:var(--pap);color:var(--ink);padding:8px 10px;font-size:13px;border:3px solid #000;position:relative}
+.d h4{margin:0 0 4px;font-size:12px;border-bottom:2px dashed #8a7a55}
+.d p{margin:2px 0}.bad{color:#b0231b;font-weight:bold;background:#f3c9c2}
+#bt{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.r{background:var(--rd);color:#fff}.f{background:#5aa7c9}
+#st{position:fixed;inset:0;background:rgba(5,6,8,.93);display:none;align-items:center;justify-content:center;padding:20px;text-align:center;z-index:5}
+#st div{max-width:520px}#st h2{color:var(--am);margin:0 0 10px}
+.w{animation:bl 1s steps(2) infinite}@keyframes bl{50%{opacity:.3}}
+@media (prefers-reduced-motion:reduce){.w{animation:none}}
+@media (max-width:480px){#docs{grid-template-columns:1fr}}
+#lg2{margin:6px 0;padding:6px 10px;background:#10161a;border-left:4px solid var(--am);min-height:36px;font-size:13px}#db{position:fixed;inset:0;background:rgba(5,8,10,.93);display:none;z-index:4;padding:14px;overflow:auto}#db .bx{max-width:560px;margin:auto;background:#10242c;border:3px solid #5aa7c9;padding:12px}#db input{width:100%;padding:8px;font:inherit;background:#06161c;color:#9fe;border:2px solid #5aa7c9}#db p{margin:6px 0;padding:6px;background:#0a1c22}.lk{color:#d9453d}.mkd{background:#f7e27a;outline:2px solid #c98b2a}canvas{touch-action:manipulation}
+#c{background:#050709;cursor:crosshair}
+.cw{overflow:hidden;isolation:isolate}
+#fx{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;background:transparent!important;pointer-events:none;z-index:2}
+#pulse{margin:8px 0 0;padding:7px 10px;min-height:32px;border:2px solid #2d3940;background:#10171b;color:#9fd;font-size:12px;opacity:.94}
+#pulse strong{color:var(--am)}
+#bt button{min-height:42px;touch-action:manipulation}
+@media (max-width:480px){body{padding:6px;font-size:14px}.cw{border-width:3px}#bt{gap:7px}#bt button{flex:1 1 42%;min-height:46px}}
+</style></head><body>
+<div id="top"><span id="hud"></span><button id="lg">EN</button></div>
+<div class="cw"><canvas id="c" width="320" height="180" aria-label="Civil Registry pixel-art game scene"></canvas><canvas id="fx" width="320" height="180" aria-hidden="true"></canvas></div>
+<div id="say"></div><div id="pulse" role="status" aria-live="polite">جاهز لبدء الوردية.</div><div id="docs"></div><div id="bt"></div>
+<div id="st"><div id="sb"></div></div>
+<script>
+let L='ar',day=0,ci=0,ev=0,tr=0,cur=null,tf=0,busy=0,T0=0;
+const U={ar:{day:'اليوم',ev:'أدلة',st:'ابدأ الوردية',ok:'ختم ✔',no:'رفض ✘',fl:'بلّغ عن شذوذ ⚠',nx:'المواطن اللي بعده',id:'البطاقة',rc:'السجل في النظام',nm:'الاسم',dob:'الميلاد',idn:'الرقم',stt:'الحالة',rq:'الطلب',alive:'على قيد الحياة',dead:'متوفى 2024',p7:'مريض رقم 07',dup:'سجلان لنفس الشخص',again:'العب من الأول',lang:'EN'},
+en:{day:'Day',ev:'Evidence',st:'Start shift',ok:'Stamp ✔',no:'Reject ✘',fl:'Flag anomaly ⚠',nx:'Next citizen',id:'ID card',rc:'System record',nm:'Name',dob:'Born',idn:'ID no.',stt:'Status',rq:'Request',alive:'Alive',dead:'Deceased 2024',p7:'Patient 07',dup:'Two records, one person',again:'Play again',lang:'العربية'}};
+const u=k=>U[L][k],t=o=>o[L];
+const D=[
+{n:{ar:'الراديو: الجو مشمس. برجاء الالتزام بالطابور يا جماعة.',en:'Radio: Sunny skies today. Please queue politely, everyone.'},e:{ar:'يوم هادي. بس الطابعة فضلت بتطن بعد ما مشيت...',en:'A quiet day. Odd: the printer kept humming after you left...'},
+c:[{nm:{ar:'حسن عبد الباقي',en:'Hassan Abdel-Baky'},dob:'1985-06-02',id:'2850602',rec:{nm:1,dob:'1985-06-02',s:'alive'},rq:{ar:'بدل فاقد',en:'Lost ID replacement'},say:{ar:'يا أستاذ أنا واقف من بدري! ختمها بس، معايا واسطة!',en:"Sir, I've been standing here forever! Just stamp it, I know someone!"},a:'ok',w:{ar:'البيانات مطابقة. أحسن حاجة تعملها: ختم.',en:'Everything matches. Stamp it and move on.'},col:'#3b6ea5'},
+{nm:{ar:'أم كريم السيد',en:'Om Karim El-Sayed'},dob:'1984-03-12',id:'8403122',rec:{nm:1,dob:'1948-03-12',s:'alive'},rq:{ar:'تصحيح تاريخ ميلاد',en:'Birth date correction'},say:{ar:'التاريخ غلط عندكم يا بيه، أنا مش عندي 78 سنة!',en:"Your system is wrong, dear. I'm not 78 years old!"},a:'no',w:{ar:'تاريخ الميلاد مش مطابق. ترفض وتحوّلها لاستمارة تصحيح.',en:'Birth dates differ. Reject and send her to the correction form.'},col:'#a5476b'}]},
+{n:{ar:'الراديو: ارتفاع غير مفسّر في حالات دخول المستشفيات.',en:'Radio: Authorities report an unexplained rise in hospital admissions.'},e:{ar:'الطابعة طبعت ورقة محدش طلبها: "Project Echo". مين طلبها؟',en:'The printer spat out a page nobody ordered: "Project Echo". Who sent it?'},
+c:[{nm:{ar:'منى فؤاد',en:'Mona Fouad'},dob:'1992-11-20',id:'9211203',rec:{nm:1,dob:'1992-11-20',s:'alive'},rq:{ar:'نسخة قسيمة زواج',en:'Marriage certificate copy'},say:{ar:'أنا نسيت ورقة واحدة بس... بس هتخلصوا لي الباقي صح؟',en:'I forgot just one paper... but you will process the rest, right?'},a:'ok',w:{ar:'كله سليم.',en:'All clear.'},col:'#4d9a64'},
+{nm:{ar:'أشرف نبيل',en:'Ashraf Nabil'},dob:'1990-01-09',id:'9001094',rec:{nm:1,dob:'1990-01-09',s:'dup'},rq:{ar:'بطاقة جديدة',en:'New ID card'},say:{ar:'أنا اتولدت مرة واحدة والله!',en:'I swear I was only born once!'},a:'fl',w:{ar:'اسمه مسجّل مرتين بأرقام مختلفة. حد بيلعب في السجلات.',en:'Registered twice under different numbers. Someone is tampering with records.'},col:'#c98b2a'}]},
+{n:{ar:'الراديو: بعض الأحياء تحت حظر حركة محدود.',en:'Radio: Several districts placed under restricted movement.'},e:{ar:'الطابور بقى أقصر. والمواطنين مش بيتكلموا زي الأول.',en:'The queue is shorter. People are not talking like before.'},
+c:[{nm:{ar:'سامح رمزي',en:'Sameh Ramzy'},dob:'1977-08-30',id:'7708301',rec:{nm:1,dob:'1977-08-30',s:'dead'},rq:{ar:'شهادة وفاة والده',en:"His father's death certificate"},say:{ar:'أنا جاي أطلع ورقة لأبويا... وإنت بتبصّلي كده ليه؟',en:"I'm here for my father's papers... why are you looking at me like that?"},a:'fl',w:{ar:'النظام بيقول سامح نفسه مات سنة 2024. بس هو واقف قدامك!',en:'The system says Sameh himself died in 2024. Yet he is standing right there!'},col:'#6b6b78'},
+{nm:{ar:'نادية سلامة',en:'Nadia Salama'},dob:'1999-04-15',id:'9904152',rec:{nm:1,dob:'1999-04-15',s:'alive'},rq:{ar:'تغيير عنوان',en:'Address change'},say:{ar:'ممكن تقفل الشباك؟ مش مرتاحة للشارع النهاردة.',en:"Could you close the window? I don't like the street today."},a:'ok',w:{ar:'سليم. بس ركّز في الشارع من الشباك.',en:'Valid. Keep an eye on the street through the window.'},col:'#7a4fa0'}]},
+{n:{ar:'الراديو: ابقوا في بيوتكم. متقربوش من المصابين. [تشويش]',en:'Radio: Remain indoors. Do not approach infected individuals. [static]'},e:{ar:'',en:''},
+c:[{nm:{ar:'محمود عيد',en:'Mahmoud Eid'},dob:'1981-12-05',id:'8112056',rec:{nm:1,dob:'1981-12-05',s:'p7'},rq:{ar:'ورقة طوارئ',en:'Emergency document'},say:{ar:'*كحة* سخن... عايز... اسمي إيه تاني؟ أنا مين؟',en:'*cough* so hot... I need... what was my name again? Who am I?'},a:'fl',w:{ar:'ملفه متعلّم "Patient 07". ده مش مواطن عادي.',en:'His file is tagged "Patient 07". This is no ordinary citizen.'},col:'#8a8a3a',sick:1}]}];
+const CL=['#cdb67e','#b8a574','#8d8566','#5d5a52','#3b2f35'],FL=['#7a6a52','#6f6049','#5a4e3e','#43392f','#2c2429'],SK=['#86c3e8','#8fb8d0','#6a7c8a','#4a4048','#6b2a2a'];
+const cv=document.getElementById('c'),x=cv.getContext('2d'),$=i=>document.getElementById(i);
+const R=(a,b,w,h,c)=>{x.fillStyle=c;x.fillRect(a|0,b|0,w,h)};
+function person(px,py,col,sick,tfm,tm){let o=tfm?Math.sin(tm/40)*2:sick?Math.sin(tm/90):0,sk=tfm?'#6f9a5a':sick?'#b4b98a':'#d9a066';px+=o;
+R(px-14,py+22,28,40,col);R(px-18,py+24,5,26,col);R(px+13,py+24,5,26,col);R(px-18,py+48,5,5,sk);R(px+13,py+48,5,5,sk);
+R(px-9,py,18,20,sk);R(px-10,py-3,20,6,tfm?'#1b2a1a':'#241a14');
+R(px-5,py+8,3,3,tfm?'#ff3b30':'#111');R(px+3,py+8,3,3,tfm?'#ff3b30':'#111');R(px-3,py+15,7,2,tfm?'#400':'#7a3b2a');}
+function scene(tm){const d=Math.min(day-1<0?0:day-1,4);
+R(0,0,320,110,CL[d]);R(0,110,320,70,FL[d]);if(day>=12){R(0,0,320,110,'#1d3a40');R(0,110,320,70,'#16262b')}for(let i=0;i<320;i+=20)R(i,110,1,70,'rgba(0,0,0,.18)');
+R(196,16,78,56,'#2a2118');R(200,20,70,48,SK[d]);
+for(let i=0;i<7;i++){let h=14+(i*13%22);R(200+i*10,68-h,9,h,'#27303a');if(d<3&&i%2)R(203+i*10,68-h+4,2,2,'#f2d56b')}
+if(d>=2){for(let i=0;i<14;i++)R(200+(i*37+tm/20)%70,20+(i*29+tm/6)%46,1,4,'rgba(200,220,255,.5)')}
+if(d>=3){R(224,22,14,10,'rgba(60,50,50,.7)');R(230,18,12,9,'rgba(60,50,50,.6)')}
+R(234,20,2,48,'#2a2118');R(200,43,70,2,'#2a2118');if(day>=6)for(let i=0;i<3;i++){let zx=206+i*22+Math.sin(tm/400+i)*3;R(zx,50,5,6,'#6f9a5a');R(zx-1,56,7,12,'#2b3a2b')}
+R(30,22,24,24,'#3a2a1a');R(32,24,20,20,'#f0ead8');R(41,26,2,9,'#222');R(41,34,7,2,'#222');
+R(70,30,32,40,'#e2d8b8');R(72,32,28,6,'#a33');R(72,42,28,2,'#7a6');R(72,48,20,2,'#7a6');R(72,54,24,2,'#7a6');
+let fa=tm/(d>=3?300:120);R(150,2,4,8,'#333');for(let k=0;k<2;k++){let dx=Math.cos(fa+k*Math.PI)*34;R(152+dx-14,10,28,3,'#555')}
+let fl=d>=2&&Math.sin(tm/57)*Math.sin(tm/13)>.6+(.15*(4-d));R(100,0,120,5,fl?'#555':'#f5f7e0');
+let q=Math.max(0,5-Math.floor(d*1.4));for(let i=0;i<q;i++)person(26+i*0,0,'#444',0,0,0),0;
+x.save();x.globalAlpha=1;for(let i=0;i<q;i++){R(16+i*20,84,12,12,'#1c1c24');R(14+i*20,96,16,18,'#1c1c24')}x.restore();
+if(cur)person(150,50,cur.col,cur.sick&&!tf?cur.sick:0,tf,tm);
+R(70,100,180,14,'#5b3a22');R(70,100,180,3,'#8a5a34');R(80,114,160,66,'#3b2616');
+R(110,124,50,32,'#1a1d22');R(113,127,44,22,d>=3?'#1c3a2a':'#2c6c8c');R(130,156,10,4,'#222');
+if(d>=1)R(116,132,36,2,'#9fd');R(190,128,10,12,'#c9e6f2');R(191,130,8,5,'#a0522d');
+R(212,132,22,10,'#aa2b2b');R(214,134,18,2,'#fff');
+let al=d*.1+(d>=4?.12+.1*Math.sin(tm/150):0);x.fillStyle='rgba(0,0,0,'+Math.min(.55,d*.1)+')';x.fillRect(0,0,320,180);
+if(d>=4||tf){x.fillStyle='rgba(220,30,30,'+(.12+.1*Math.sin(tm/120))+')';x.fillRect(0,0,320,180)}
+if(day==0){R(0,0,320,180,'#0a0c10');x.fillStyle='#e8b04a';x.font='bold 18px monospace';x.textAlign='center';x.fillText('CIVIL REGISTRY',160,76);x.fillStyle='#d9453d';x.font='bold 14px monospace';x.fillText('THE LAST FILE',160,96);x.textAlign='left'}}
+function loop(tm){scene(tm);requestAnimationFrame(loop)}requestAnimationFrame(loop);
+function hud(){$('hud').textContent=day?u('day')+' '+day+'/15 — '+u('ev')+': '+ev:'Civil Registry: The Last File'}
+function say(h){$('say').innerHTML=h}
+function btn(txt,fn,c){let b=document.createElement('button');b.textContent=txt;b.className=c||'';b.onclick=fn;$('bt').appendChild(b)}
+function clr(){$('bt').innerHTML='';$('docs').innerHTML=''}
+function menu(){clr();cur=null;tf=0;say('<b>📁</b> '+(L=='ar'?'سجل مدني — مكتب رقم 4. أنت الموظف الجديد. اللي في الورق هو اللي في الحقيقة... أو لأ.':'Civil Registry — Window 4. You are the new clerk. What the paper says is the truth... or is it?'));btn(u('st'),()=>start(1));hud()}
+function start(n){day=n;ci=0;cur=null;clr();hud();if(day>4)return scn();let d=D[day-1];say('<b>📻</b> '+t(d.n));btn(u('nx'),next)}
+function next(){clr();let d=D[day-1];if(ci>=d.c.length)return endDay();cur=d.c[ci];busy=0;
+let r=cur.rec,S={alive:'alive',dead:'dead',p:'p7',dup:'dup',p7:'p7'}[r.s],rd=r.dob!=cur.dob,rs=r.s!='alive';
+say('<b>'+t(cur.nm)+':</b> «'+t(cur.say)+'»<br><i>'+u('rq')+': '+t(cur.rq)+'</i>');
+$('docs').innerHTML='<div class="d"><h4>🪪 '+u('id')+'</h4><p>'+u('nm')+': '+t(cur.nm)+'</p><p>'+u('dob')+': '+cur.dob+'</p><p>'+u('idn')+': '+cur.id+'</p></div><div class="d"><h4>💻 '+u('rc')+'</h4><p>'+u('nm')+': '+t(cur.nm)+'</p><p class="'+(rd?'bad':'')+'">'+u('dob')+': '+r.dob+'</p><p class="'+(rs?'bad':'')+'">'+u('stt')+': '+u(S)+'</p></div>';
+btn(u('ok'),()=>pick('ok'));btn(u('no'),()=>pick('no'),'r');btn(u('fl'),()=>pick('fl'),'f')}
+function pick(a){if(busy)return;busy=1;clr();let g=a==cur.a;if(g){tr++;if(a=='fl')ev++;}
+say((g?'✅ ':'⚠️ ')+t(cur.w)+(g&&a=='fl'?'<br><b>+1 '+u('ev')+'</b>':''));hud();
+if(day==4)return setTimeout(transform,900);ci++;btn(u('nx'),next)}
+function endDay(){clr();let d=D[day-1];say('<b>🌙</b> '+t(d.e));hud();btn(u('nx'),()=>start(day+1))}
+function transform(){tf=1;say('<b>⚠️</b> '+(L=='ar'?'محمود بيرتعش... عينه اتغيّرت... <span class="w">إنذار! الإنذار شغّال!</span>':'Mahmoud is shaking... his eyes have changed... <span class="w">ALARM! The building alarm is going off!</span>'));clr();setTimeout(()=>{tf=0;cur=null;start(5)},3800)}
+function finale(){let s=$('st');s.style.display='flex';$('sb').innerHTML=L=='ar'?'<h2>الوباء وصل المبنى</h2><p>الأبواب اتقفلت. الطابعة بتطبع لوحدها...</p><p>ملفك الشخصي في النظام:<br><b style="color:#d9453d">PLAYER RECORD: RESTRICTED</b></p><p>عدد الأدلة: '+ev+'<br><b style="color:#e8b04a">FILE STATUS: ACTIVE</b></p><p>— نهاية الفصل الأول. باقي 11 يوم... —</p>':'<h2>The outbreak has reached the building</h2><p>The doors lock. The printer prints by itself...</p><p>Your own file in the system:<br><b style="color:#d9453d">PLAYER RECORD: RESTRICTED</b></p><p>Evidence found: '+ev+'<br><b style="color:#e8b04a">FILE STATUS: ACTIVE</b></p><p>— End of Chapter 1. 11 days remain... —</p>';let b=document.createElement('button');b.textContent=u('again');b.onclick=()=>{s.style.display='none';day=0;ev=0;tr=0;menu()};$('sb').appendChild(b)}
+$('lg').onclick=()=>{L=L=='ar'?'en':'ar';document.documentElement.lang=L;document.documentElement.dir=L=='ar'?'rtl':'ltr';$('lg').textContent=u('lang');day==0?menu():day>4?(day==15?fin():scn()):cur&&!busy?next_rerender():hud()};
+const G={},P=a=>a[L=='ar'?0:1];
+const S=[
+[["المدير بيقفل مكتبه بالمفتاح وبسرعة. الإنترنت قطع.","The manager locks his office in a hurry. The internet is down."],["افتح مكتبه وفتّش","Break into his office"],["كمّل الشغل زي ما هو","Keep working"],["لقيت جدول تحويل أسماء بخط إيده: «Echo»","A hand-written list of renamed citizens: «Echo»."],["الطوابير فاضية والمكتب ساكت بشكل مريب.","The queue is empty. The silence is wrong."],1,"mgr","calm"],
+[["الرائد ياسر وصل وعايز ملفات الأرشيف. شكله عارف أكتر مما بيقول.","Major Yasser arrives and demands the archive. He knows more than he says."],["سلّمه الملفات","Hand over the files"],["أخبّي الملفات","Hide the files"],["الرائد بيدّيك رقم الطوارئ. هل هو معاك؟","He gives you an emergency number. Friend or handler?"],["الرائد بيبصلك بشك وبيمشي.","He leaves, suspicious."],0,"sec","hid"],
+[["مواطن بيقع في الطابور وبيترعش. الكل بيصوّر بالموبايل.","A citizen collapses in the queue, trembling. Everyone films it."],["اتصل بالإسعاف","Call an ambulance"],["اقفل الصالة","Lock the waiting room"],["الإسعاف بتيجي متأخرة... بس بتاخده.","The ambulance arrives late, but takes him."],["اتحاصروا جوه... بس محدش اتعدّى.","They're trapped inside, but nobody else is hurt."],0,"amb","lock"],
+[["دكتورة هالة بتجري على المكتب: «المستشفى بتنهار. محتاجة السجلات!»","Dr. Hala runs in: «The hospital is collapsing. I need the records!»"],["اطبع لها السجلات","Print her the records"],["وجّهها للمستشفى","Send her away"],["السجلات بتبيّن 07 مريض بنفس الأعراض قبل الوباء!","The records show 07 patients with the same symptoms before the outbreak!"],["هالة بتمشي. فرصة ضاعت.","Hala leaves. A chance lost."],1,"doc","calm"],
+[["حظر تجوّل. موظف الأرشيف سمير بيديك مفتاح غرفة سرية.","Curfew. Archive clerk Samir slips you a key to a hidden room."],["خد المفتاح","Take the key"],["ارفض","Refuse"],["غرفة سرية تحت الأرض: ملفات متحذفة وأسماء ناس.","A hidden basement: deleted files and names of missing people."],["سمير بيمشي، المفتاح بيرن في جيبه كأنه ضميرك.","Samir leaves. The key stays in your mind."],1,"key","calm"],
+[["أول مصاب بيهاجم! موظفة زميلة بتتحول قدامك.","The first attack! A coworker transforms in front of you."],["حاول تساعدها","Try to help her"],["دافع عن نفسك واهرب","Defend yourself and run"],["إيدك اتخربشت. مش عارف لو اتعديت.","Her nails scratch your arm. Infected?"],["بتجري وتقفل الباب. أنقذت نفسك.","You run and lock the door. Safe, for now."],0,"help","run"],
+[["المكتب بقى غير آمن. فيه ناجين تحت المكتب وأكل قليل.","The office is no longer safe. Survivors hide here; food is scarce."],["شارك الأكل مع الناجين","Share the food"],["خد الأكل وامشي","Take the food and go"],["الناجين بيثقوا فيك ويدّولك خريطة المختبر.","Survivors trust you and give you a lab map."],["معاك مؤن. بس سمعة ضاعت.","You have supplies. Your reputation is gone."],0,"share","greed"],
+[["بوابة المختبر: أمن مقفول وإضاءة حمرا بتنبض.","Lab gate: sealed security, pulsing red light."],["ادخل غرفة التجارب","Enter the experiment room"],["خد الأدوية بس وارجع","Grab medicine and leave"],["خزان فيه Subject 07. اسمه بيطابق... ملف قديم.","A tank labeled Subject 07. The name matches an old file."],["معاك أدوية. الأسرار لسه مقفولة.","You have medicine. The secrets stay locked."],1,"exp","safe"],
+[["Project Echo: الباحث بيعترف إن التجربة غيّرت الذاكرة والاستجابة العصبية.","Project Echo: the researcher confesses the experiment rewired memory and nerve responses."],["اطبع كل الملفات كدليل","Print every file as evidence"],["امسح الملفات","Delete the files"],["الطابعة بتطبع آخر صفحة: رقم ملفك الشخصي.","The printer outputs the last page: your own file number."],["الأدلة اتحذفت. الحقيقة معاك بس.","The evidence is gone. Only you know."],1,"echo","wipe"],
+[["الشاشة: PLAYER RECORD — RESTRICTED. النظام يعرفك من قبل ما تبدأ.","Screen: PLAYER RECORD — RESTRICTED. The system knew you before you started."],["افتح الملف","Open the file"],["اقفل الشاشة","Shut the screen"],["ذكريات متقطعة: أنت اتسجلت كمتطوع في Echo.","Memory fragments: you volunteered for Echo."],["الملف بيفضل مفتوح في خيالك.","The file stays open in your mind."],1,"self","deny"]];
+function scn(){clr();cur=null;tf=0;if(day==15)return fin();let s=S[day-5];say('<b>📍</b> '+P(s[0]));hud();btn(P(s[1]),()=>ch(s,0));btn(P(s[2]),()=>ch(s,1),'r')}
+function ch(s,i){clr();if(i==0&&s[5])ev++;G[s[6+i]]=1;say('➡️ '+P(s[3+i])+(i==0&&s[5]?'<br><b>+1 '+u('ev')+'</b>':''));hud();btn(u('nx'),()=>start(day+1))}
+function fin(){clr();say('<b>🌅</b> '+(L=='ar'?'اليوم الأخير. كل الأدلة قدامك: الطابعة، الأرشيف، ملف Echo. اختار.':'Final day. Everything lies before you: the printer, the archive, the Echo file. Choose.'));hud();
+[['truth',['اكشف الحقيقة للعالم','Reveal the truth']],['silence',['اخفي الحقيقة','Bury the truth']],['leave',['اترك المدينة','Leave the city']],['sac',['ضحّي بنفسك','Sacrifice yourself']],['file',['افتح ملفك الأخير','Open your last file']]].forEach(o=>btn(P(o[1]),()=>endg(o[0]),o[0]=='file'?'f':''))}
+function endg0(k){if(k=='truth'&&CT)k='true';if(k=='leave'&&G.help)k='inf';else if(k=='leave')k='surv';if(k=='file'&&CLP)k='loop';
+const E={true:[["النهاية الحقيقية","TRUE ENDING"],["كل الأدلة اتجمّعت: تجربة ← فشل ← تغطية ← انتشار ← انهيار. الكارثة الحقيقية كانت محاولة إخفاء الفيروس.","Experiment → Failure → Cover-up → Spread → Collapse. The real disaster was hiding the virus."]],
+truth:[["THE TRUTH — الحقيقة","THE TRUTH"],["المشروع اتكشف للعالم. المدينة ما رجعتش طبيعية، بس الناس عرفت.","The project is exposed. The city never returns to normal, but everyone knows."]],
+silence:[["THE SILENCE — الصمت","THE SILENCE"],["الملفات اتدفنت. المؤسسة كملت والوباء اتحاصر جزئيًا... والحقيقة اتمسحت.","The files are buried. The institution endures, the outbreak half-contained, the truth erased."]],
+surv:[["THE SURVIVOR — الناجي","THE SURVIVOR"],["سبت المدينة ونجيت. العالم كله مش عارف إيه اللي حصل.","You leave and live. The world never learns what happened."]],
+inf:[["THE INFECTED — المصاب","THE INFECTED"],["خرجت... بس إيدك مش بتبطل ترتعش. اللعبة بتنتهي قبل ما نعرف مصيرك.","You make it out... but your hand won't stop shaking. The game ends before your fate."]],
+sac:[["THE SACRIFICE — التضحية","THE SACRIFICE"],["ضحّيت بنفسك علشان الباقيين يهربوا. اسمك اتحذف من السجلات، بس الناس فاكراه.","You give yourself so the rest escape. Your name is wiped from records, yet remembered."]],
+loop:[["THE LOOP — الحلقة","THE LOOP"],["الأحداث دي حصلت قبل كده. النظام بيعيدها، وفي كل مرة إنت «الموظف الجديد».","This happened before. The system replays it, and you are always the new employee."]],
+file:[["THE LAST FILE — الملف الأخير","THE LAST FILE"],["فتحت ملفك وعرفت كل حاجة.<br><b style='color:#e8b04a'>FILE STATUS: ACTIVE</b>","You open your own file and learn everything.<br><b style='color:#e8b04a'>FILE STATUS: ACTIVE</b>"]]};
+let e=E[k],s=$('st');s.style.display='flex';$('sb').innerHTML='<h2>'+P(e[0])+'</h2><p>'+P(e[1])+'</p><p>'+u('ev')+': '+ev+'</p><p style="color:#d9453d">'+(L=='ar'?'بعد 15 يوم: مواطن بيحط بطاقته على الشباك... رقم الملف: ECHO-07.':'15 DAYS EARLIER: a citizen sets a card on the counter... file no. ECHO-07.')+'</p>';
+let b=document.createElement('button');b.textContent=u('again');b.onclick=()=>{s.style.display='none';day=0;ev=0;tr=0;for(let q in G)delete G[q];menu()};$('sb').appendChild(b)}
+function next_rerender(){ci=ci;next()}
+document.documentElement.lang='ar';$('lg').textContent=u('lang');menu();
+</script><script>
+let CT=0,CLP=0;const K='crlf2',T2=(a,e)=>L=='ar'?a:e,now=()=>performance.now();
+let ST,AC,hov=null;
+const O={pr:{s:'idle',t:0,doc:null,sh:0},pc:{s:'sleep'},ph:{s:'idle',t:0},sc:{s:'idle',t:0},dr:{o:0,t:0},lt:1,dw:0,ac:0,bk:0,bl:0};
+const HB={ac:[2,28,26,62],cam:[170,6,14,9],wn:[200,20,70,48],dr:[290,36,26,76],lt:[100,0,120,7],pr:[256,84,42,30],sc:[74,88,36,12],pc:[108,122,54,36],ph:[168,126,18,12],dw:[80,128,30,26]};
+const REQ={5:'dw',6:'cam',7:'wn',9:'ph',10:'dr',11:'lt'};
+const HINT=[['الدرج','Drawer'],['الكاميرا','Camera'],['الشباك','Window'],['الكمبيوتر: هالة','Computer: Hala'],['التليفون','Phone'],['الباب','Door'],['النور','Lights'],['الكمبيوتر: مريض 07','Computer: Subject 07'],['الكمبيوتر ثم الطابعة: إيكو','Computer then Printer: Echo'],['الكمبيوتر: أنت','Computer: YOU']];
+const F2=[['في درج المدير: قايمة 14 اسم اتنقلوا لـ «Echo».','Manager drawer: 14 names moved to «Echo».'],['الكاميرا: موظف اتسحب الساعة 2:14... وبعدين رجع يمشي لوحده بحركة غريبة.','Camera: an employee taken at 2:14... later walks back alone, moving wrong.'],['من الشباك: ناس واقفة ساكتة بتبص على المكتب.','Outside: people stand silent, staring at the office.'],['سجل هالة: 07 حالات بنفس الأعراض قبل الوباء!','Hala\'s log: 07 cases with the same symptoms BEFORE the outbreak!'],['سمير في التليفون: «المفتاح تحت الدولاب. متقولش لحد.»','Samir on the phone: «Key is under the cabinet. Tell no one.»'],['الباب بيتخبط من جوه بإيقاع ثابت... مش حد بيستنجد.','The door is pounded in a steady rhythm... not someone begging for help.'],['النور مقفول: اللي برة بتتحرك ناحية الصوت بس.','Lights off: the ones outside move toward sound only.'],['Subject 07 اتحذف: بيطابق متطوع.','Subject 07 deleted: matches a volunteer.'],['طبعت ملف Echo كامل.','Echo file printed in full.'],['ملفك: متطوع في Echo. الذاكرة اتمسحت.','Your file: Echo volunteer. Memory wiped.']];
+const UX={2:['Subject: Patient 07 — Project Echo','p07'],5:['أمر نقل: 14 اسم ← Echo-Group','Transfer order: 14 names → Echo-Group'],9:['بروتوكول احتواء 7: ممنوع إبلاغ الجمهور','Containment protocol 7: do not inform the public'],13:['SUBJECT 07 = ECHO-07: سجل المتطوع مختوم','SUBJECT 07 = ECHO-07: volunteer record sealed']};
+function newST(){return{ev:{},inv:{food:1,med:0},inf:0,rd:{},up:{},look:{},gone:0}}
+ST=newST();
+const XD=[
+{n:['د. هالة','Dr. Hala'],id:'4410',s:'alive',note:['مسؤولة الطوارئ.','ER chief.'],min:5,ev:'hala',rq:8},
+{n:['الرائد ياسر','Major Yasser'],id:'6120',s:'rst',note:['منسّق مع المختبر.','Lab liaison.'],min:6,lock:['key','sec'],ev:'yas'},
+{n:['سجلات محذوفة','Deleted names'],id:'DEL',s:'del',note:['14 اسم اتحذفوا في يوم واحد.','14 names deleted in one day.'],min:5,ev:'del'},
+{n:['مريض 07','Subject 07'],id:'S07',s:'del',note:['محذوف: بيطابق متطوع.','Deleted: matches a volunteer.'],min:8,ev:'s07',rq:12},
+{n:['مشروع إيكو','Project Echo'],id:'ECHO',s:'rst',note:['تجارب الذاكرة والاستجابة العصبية. تسريب 2024 وتم التستر.','Memory/neural trials. 2024 leak, covered up.'],min:9,lock:['key','exp','sec'],ev:'echo'},
+{n:['أنت','YOU'],id:'YOU',s:'rst',note:['متطوع Echo قبل 3 سنين.','Echo volunteer 3 yrs ago.'],min:14,lock:['echo'],ev:'self',rq:14}];
+function save(){try{localStorage.setItem(K,JSON.stringify({day,G,ST,L}))}catch(e){}}
+function hasSave(){try{let q=JSON.parse(localStorage.getItem(K));return q&&q.day>0}catch(e){return 0}}
+function load(){try{let q=JSON.parse(localStorage.getItem(K));day=q.day;for(let k in q.G)G[k]=q.G[k];ST=q.ST;L=q.L||L;document.documentElement.lang=L;document.documentElement.dir=L=='ar'?'rtl':'ltr';$('lg').textContent=u('lang');ev=Object.keys(ST.ev).length}catch(e){}}
+function snd(f,d,ty,v){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();let o=AC.createOscillator(),g=AC.createGain();o.type=ty||'square';o.frequency.value=f;g.gain.value=v||.03;o.connect(g);g.connect(AC.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+d);o.stop(AC.currentTime+d)}catch(e){}}
+function lg(h){$('lg2').innerHTML=h}
+function addEv(k){if(ST.ev[k])return 0;ST.ev[k]=1;ev=Object.keys(ST.ev).length;snd(660,.15,'triangle');hud();save();return 1}
+function hud(){$('hud').textContent=day?u('day')+' '+day+'/15 · '+u('ev')+' '+ev+' · 🍞'+ST.inv.food+' 💊'+ST.inv.med+(ST.inf?' ☣':''):'Civil Registry: The Last File'}
+function fulfil(){if(ST.rd[day])return;ST.rd[day]=1;addEv('d'+day);lg('🔎 '+P(F2[day-5]));dec()}
+function reqk(k){if(day>4&&day<15&&REQ[day]==k)fulfil()}
+function prn(doc){let p=O.pr;if(p.s!='idle')return 0;O.pr={s:'recv',t:now(),doc,sh:0};snd(200,.4,'sawtooth');return 1}
+function grab(){let p=O.pr;O.pr={s:'idle',t:0,doc:null,sh:0};snd(900,.08)}
+function touch(k){if(!day||$('db').style.display=='block')return;snd(300,.04);
+ if(O.bl>now()&&k!='lt')return lg(T2('الكهرباء قاطعة...','Power is out...'));
+ if(k=='pr'){let p=O.pr;if(p.s=='jam'){O.pr={s:'idle',t:0,doc:null,sh:8};snd(120,.2,'sawtooth');return lg(T2('فكيت الورقة المعلّقة.','Paper jam cleared.'))}
+  if(p.s=='done'){grab();return lg(T2('خدت الورقة.','You take the sheet.'))}return lg(p.s=='idle'?T2('الطابعة فاضية. اطبع نتيجة من الكمبيوتر.','Printer idle. Print a result from the computer.'):T2('بتطبع...','Printing...'))}
+ if(k=='sc'){if(!cur)return lg(T2('مفيش ورقة للسكان.','Nothing to scan.'));O.sc={s:'scan',t:now()};snd(700,.6,'sine');cur.scan=1;let b=cur.a=='fl',c=cur;setTimeout(()=>lg(b?T2('السكان: الصورة والتوقيع مش مطابقين للسجل!','Scan: photo & signature do NOT match!'):T2('السكان: الورقة سليمة.','Scan: genuine document.')),1300);return}
+ if(k=='pc'){let p=O.pc;if(p.s=='sleep'){p.s='load';snd(400,.3,'sine');setTimeout(()=>{p.s='on';dbOpen()},900)}else if(p.s=='on')dbOpen();return}
+ if(k=='ph'){let p=O.ph;if(day>=11)return lg(T2('📵 مفيش شبكة.','📵 No signal.'));if(p.s=='ring'){p.s='idle';snd(500,.1);lg('📞 '+(day<5?T2('حد بيسأل عن ورقة ناقصة. «معايا واسطة!»','Someone asks about a missing paper. «I know someone!»'):day<10?T2('نفَس تقيل... وبعدين: «متفتحش ملف 07».','Heavy breathing... then: «Do not open file 07».'):T2('تشويش... «Echo... Echo...»','Static... «Echo... Echo...»')));if(day>=5)addEv('call'+(day>9?2:1));if(day==9)G.callok=1;return reqk('ph')}return lg(T2('التليفون ساكت.','The phone is quiet.'))}
+ if(k=='wn'){lg('🪟 '+(day<6?T2('الشارع مزدحم. عربيات وناس.','Busy street: cars and people.'):T2('ناس بتتحرك بحركة متقطعة في الشارع.','People shuffle through the street, moving wrong.'))+(G.amb&&day>=7?T2(' إسعاف عليه شعار Echo.',' An ambulance with an Echo logo.'):''));if(G.amb&&day>=7)addEv('amb');return reqk('wn')}
+ if(k=='dr'){let d=O.dr;if(day>=6){O.bk=1;snd(90,.3,'sawtooth');lg(T2('زقيت المكتب قدام الباب.','You push a desk against the door.'))}else{d.o=d.o?0:1;snd(180,.2,'sawtooth');lg(d.o?T2('الباب اتفتح بصرير.','Door creaks open.'):T2('الباب اتقفل.','Door closed.'))}return reqk('dr')}
+ if(k=='lt'){O.lt=O.lt?0:1;snd(1000,.03);lg(O.lt?T2('النور اشتغل.','Lights on.'):T2('النور اتقفل.','Lights off.'));return reqk('lt')}
+ if(k=='cam'){if(day<6)return lg(T2('كاميرا المراقبة: مفيش حاجة غريبة.','CCTV: nothing unusual.'));addEv('cam');lg('📹 '+P(F2[1]));return reqk('cam')}
+ if(k=='ac'){if(!G.key)return lg(T2('الأرشيف مقفول.','The archive is locked.'));O.ac=1;snd(250,.2,'sawtooth');addEv('arc');return lg(T2('الأرشيف: ملفات متحذفة وصور مفقودين.','Archive: deleted files and photos of the missing.'))}
+ if(k=='dw'){O.dw=O.dw?0:1;snd(220,.15,'sawtooth');lg(O.dw?T2('الدرج اتفتح: ورق قديم.','Drawer open: old papers.'):T2('قفلت الدرج.','Drawer closed.'));return reqk('dw')}}
+function dbOpen(){let b=$('db');b.style.display='block';b.innerHTML='<div class="bx"><p><b>💻 CIVIL-DB</b> <button id="dx">✕</button></p><input id="dq" placeholder="'+T2('ابحث بالاسم أو الرقم...','Search name or ID...')+'"><div id="dr"></div></div>';$('dx').onclick=()=>b.style.display='none';$('dq').oninput=e=>dbS(e.target.value);$('dq').focus()}
+function dbS(q){q=q.trim().toLowerCase();let r=$('dr');if(q.length<2){r.innerHTML='';return}
+ if(O.bl>now()||(day>=11&&!G.share&&!ST.gn&&Math.random()<.5)){r.innerHTML='<p class="lk">⚠ '+T2('النظام مش بيرد... حاول تاني.','System timeout... retry.')+'</p>';snd(150,.2);return}
+ let all=[];D.forEach(d=>d.c.forEach(c=>all.push({n:[c.nm.ar,c.nm.en],id:c.id,s:c.rec.s,dob:c.rec.dob,min:1,cit:1})));XD.forEach(e=>all.push(e));
+ let h='';all.filter(e=>day>=e.min&&(e.n[0].toLowerCase().includes(q)||e.n[1].toLowerCase().includes(q)||e.id.toLowerCase().includes(q))).forEach((e,i)=>{let lk=e.lock&&!e.lock.some(f=>G[f]);
+  let st={alive:'alive',dead:'dead',p7:'p7',dup:'dup',del:null,rst:null}[e.s];let sl=st?u(st):(e.s=='del'?T2('محذوف','DELETED'):T2('مقيّد','RESTRICTED'));
+  h+='<p><b>'+P(e.n)+'</b> — '+e.id+(e.dob?' — '+e.dob:'')+'<br>'+(lk?'<span class="lk">🔒 LOCKED</span>':u('stt')+': '+sl+(e.note?'<br>'+P(e.note):'')+(e.s=='dup'?'<br>'+T2('هوية مرتبطة: '+e.id.slice(0,6)+'5','Linked identity: '+e.id.slice(0,6)+'5'):'')+(e.s=='dead'?'<br>'+T2('تاريخ تعديل: 2024','Modified: 2024'):'')+(e.ev?' <button class="f" onclick="dbP(\''+e.ev+'\')">🖨</button>':''))+'</p>';
+  if(!lk){if(e.cit){ST.look[e.id]=1;if(cur&&cur.id==e.id&&!busy)renderDocs()}if(e.rq==day&&!ST.rd[day])setTimeout(fulfil,300)}});
+ r.innerHTML=h||'<p>'+T2('مفيش نتايج.','No results.')+'</p>'}
+function dbP(k){let e=XD.find(z=>z.ev==k);if(!prn({ev:k,t:e.note}))return;$('db').style.display='none';lg(T2('جاري الطباعة...','Printing...'))}
+function tick(tm){let p=O.pr,t=now();if(p.s=='recv'&&t-p.t>500){p.s='roll';p.t=t}else if(p.s=='roll'&&t-p.t>1500){if(day>=9&&O.bl&&Math.random()<.3){p.s='jam';snd(100,.4,'sawtooth');lg(T2('الطابعة علّقت! دوس عليها.','Printer jam! Click it.'))}else{p.s='out';p.t=t}}else if(p.s=='out'&&t-p.t>1600){p.s='done';let d=p.doc;if(d.ev){addEv('p'+d.ev);if(d.ev=='echo'){G.echo=1;if(day==13)fulfil()}}lg('📄 '+P(d.t)+' '+T2('(المس الطابعة لتاخد الورقة)','(touch the printer to take it)'))}
+ if(O.ph.s=='ring'&&t-O.ph.t>7000){O.ph.s='idle';ST.missed=(ST.missed||0)+1;lg(T2('📞 فاتتك مكالمة.','📞 Missed call.'))}
+ if(O.sc.s=='scan'&&t-O.sc.t>1200)O.sc.s='idle';if(p.sh>0)p.sh--}
+setInterval(()=>{if(!day||day==15)return;if(UX[day]&&!ST.up[day]){ST.up[day]=1;if(prn({ev:'u'+day,t:UX[day]})){lg(T2('الطابعة بتطبع لوحدها!','The printer is printing by itself!'))}}
+ if(day>=3&&day<11&&O.ph.s=='idle'&&Math.random()<.4)ring();
+ if(day>=5&&ST.gone<4&&Math.random()<.3){ST.gone++;lg(T2('حد من الطابور اختفى... محدش لاحظ.','Someone in the queue vanished... nobody noticed.'))}
+ if(day>=9&&O.bl<now()&&Math.random()<.25){O.bl=now()+3000;snd(80,.6,'sawtooth')}
+ if(day>=6&&day<15)snd(90,.1,'sawtooth',.05)},6000);
+function ring(){if(O.ph.s!='idle')return;O.ph={s:'ring',t:now()};let n=0,i=setInterval(()=>{if(O.ph.s!='ring'||++n>9)return clearInterval(i);snd(880,.15,'square',.03)},700)}
+function react(){let r=[];if(day>=7&&G.lock)r.push(T2('باب الصالة بيتخبط.','The waiting-room door is pounded.'));
+ if(day>=8&&G.doc&&!ST.mx){ST.mx=1;ST.inv.med++;r.push(T2('هالة رجعت وسابتلك علبة أدوية.','Hala left you a medicine box.'))}
+ if(day>=11&&G.hid&&!G.sec&&!ST.rz){ST.rz=1;let k=Object.keys(ST.ev);delete ST.ev[k[k.length-1]];ev=Object.keys(ST.ev).length;r.push(T2('الرائد داهم المكتب وصادر دليل.','The Major raided the office and seized evidence.'))}
+ if(day>=11&&G.share&&!ST.gn){ST.gn=1;r.push(T2('الناجين شغّلوا المولّد.','Survivors started the generator.'))}
+ if(day>=12&&G.greed&&ST.inv.med>0){ST.inv.med=0;r.push(T2('الناجين سرقوا الأدوية.','Survivors stole the medicine.'))}
+ if(day>=13&&ST.inf&&ST.inv.med>0&&!ST.cu){ST.cu=1;ST.inv.med--;ST.inf=0;r.push(T2('خدت الدواء: العدوى وقفت.','You took the medicine: the infection stopped.'))}
+ else if(day>=10&&ST.inf)r.push(T2('إيدك بترتعش.','Your hand trembles.'));return r.join(' ')}
+function scn(){clr();cur=null;tf=0;O.dr.o=0;if(day==15)return fin();let s=S[day-5],r=react();
+ say('<b>📍</b> '+P(s[0])+(r?'<br><i>'+r+'</i>':'')+'<br>👆 '+T2('المس الأشياء في المكتب (الشباك، الباب، التليفون، الكمبيوتر...)','Touch things in the office (window, door, phone, computer...)')+' <b>['+P(HINT[day-5])+']</b>');
+ hud();save();if(day==9)setTimeout(ring,1500);if(ST.rd[day])dec()}
+function dec(){clr();let s=S[day-5],lab=day==12&&!(G.sec||G.key);if(!lab)btn(P(s[1]),()=>ch(s,0));else lg(T2('بوابة المختبر مقفولة: محتاج تصريح الرائد أو مفتاح الأرشيف.','Lab gate locked: you need the Major\'s pass or the archive key.'));btn(P(s[2]),()=>ch(s,1),'r')}
+function ch(s,i){clr();let f=s[6+i];G[f]=1;if(i==0&&s[5])addEv('x'+day);
+ if(f=='sec')ST.rel=1;if(f=='share'){ST.inv.food=Math.max(0,ST.inv.food-1)}if(f=='greed')ST.inv.food+=2;if(f=='help')ST.inf=1;if(f=='exp')ST.inv.med++;if(f=='lock')O.bk=1;
+ say('➡️ '+P(s[3+i]));hud();save();btn(u('nx'),()=>start(day+1))}
+function renderDocs(){let r=cur.rec,lk=ST.look[cur.id],bd=r.dob!=cur.dob,sb=lk&&r.s!='alive';
+ $('docs').innerHTML='<div class="d"><h4>🪪 '+u('id')+'</h4><p onclick="mk(this,0)">'+u('nm')+': '+t(cur.nm)+'</p><p onclick="mk(this,'+(bd?1:0)+')">'+u('dob')+': '+cur.dob+'</p><p onclick="mk(this,0)">'+u('idn')+': '+cur.id+'</p></div><div class="d"><h4>💻 '+u('rc')+'</h4><p onclick="mk(this,0)">'+u('nm')+': '+t(cur.nm)+'</p><p onclick="mk(this,'+(bd?1:0)+')">'+u('dob')+': '+r.dob+'</p><p onclick="'+(lk?'mk(this,'+(sb?1:0)+')':'lg(T2(\'الحالة مش ظاهرة: افحص الكمبيوتر.\',\'Status hidden: check the computer.\'))')+'">'+u('stt')+': '+(lk?u({alive:'alive',dead:'dead',p7:'p7',dup:'dup'}[r.s]):'؟ ?')+'</p></div>'}
+function mk(el,b){el.classList.toggle('mkd');if(b&&el.classList.contains('mkd')){cur.found=1;lg(T2('🔍 لاحظت اختلاف!','🔍 You spotted a mismatch!'))}}
+function next(){clr();let d=D[day-1];if(ci>=d.c.length)return endDay();cur=d.c[ci];cur.t0=now();cur.lv=0;busy=0;cur.found=0;cur.scan=0;
+ say('<b>'+t(cur.nm)+':</b> «'+t(cur.say)+'»<br><i>'+u('rq')+': '+t(cur.rq)+'</i>');renderDocs();lg(T2('قارن البيانات بالضغط عليها، اسكان الورقة، أو افحص الكمبيوتر.','Compare data by tapping it, scan the paper, or check the computer.'));
+ btn(u('ok'),()=>pick('ok'));btn(u('no'),()=>pick('no'),'r');btn(u('fl'),()=>pick('fl'),'f')}
+function pick(a){if(busy)return;if(a=='fl'&&!(cur.found||ST.look[cur.id]||cur.scan))return lg(T2('مفيش دليل كفاية: قارن أو اسكان أو افحص النظام.','Not enough proof: compare, scan or check the system.'));
+ busy=1;clr();let g=a==cur.a;if(g)tr++;if(g&&a=='fl')addEv('c'+cur.id);snd(g?520:140,.2);cur.lv=now();say((g?'✅ ':'⚠️ ')+t(cur.w)+(g&&a=='fl'?'<br><b>+1 '+u('ev')+'</b>':''));hud();save();
+ if(day==4)return setTimeout(transform,900);ci++;btn(u('nx'),next)}
+function menu(){clr();cur=null;tf=0;day=0;$('db').style.display='none';say('<b>📁</b> '+(L=='ar'?'سجل مدني — مكتب رقم 4. المس الأشياء، قارن الورق، وابحث في النظام. اللي في الورق هو الحقيقة... أو لأ.':'Civil Registry — Window 4. Touch things, compare papers, search the system. Paper is truth... or is it?'));lg('');btn(u('st'),()=>{ST=newST();ev=0;for(let k in G)delete G[k];O.bk=0;O.ac=0;start(1)});if(hasSave())btn(T2('كمّل 💾','Continue 💾'),()=>{load();start(day)},'f');hud()}
+function endg(k){CT=ev>=14&&ST.ev.self&&ST.ev.echo&&G.echo;CLP=ev>=12&&ST.ev.self;if(k=='truth'&&!G.echo)k='silence';if(k=='sac'&&!(G.share||ST.inv.med>0))k='leave';if(k=='file'&&!G.self)k='silence';G.help=ST.inf?1:0;endg0(k);try{localStorage.removeItem(K)}catch(e){}}
+const st0=start;start=n=>{st0(n);save()};
+function qp(bx,tm,i){
+ const bob=Math.sin(tm/430+i*1.7)*.8,sway=Math.sin(tm/710+i)*.7,blink=((tm/830+i)%5)<.08;
+ const shirts=['#263447','#3d2535','#263b32','#4a3b2a','#313050'],skin=['#b97851','#d39a68','#a96849'][i%3],hair=['#17181d','#2b1b17','#40231e'][i%3],c=shirts[i%shirts.length];
+ const top=96+bob;pxp(bx+2,top,12,18,c);pxp(bx+3,114+bob,4,7,'#17171b');pxp(bx+9,114+bob,4,7,'#17171b');pxp(bx,103+bob,5,7,c);pxp(bx+11,102+bob,5,8,c);
+ pxp(bx+2,84+bob,12,13,skin);pxp(bx+1,83+bob,14,5,hair);pxp(bx+3,89+bob,3,2,blink?'#17151a': '#111');pxp(bx+9,89+bob,3,2,blink?'#17151a':'#111');pxp(bx+6,94+bob,4,1,i===2?'#7a3b2a':'#9b5e4d');
+ if(i%2===0)pxp(bx+12,96+bob,3,5,'#e9dfbf');else pxp(bx-2,98+bob,3,4,'#d9edf0');
+}
+class CharacterSprite{
+ constructor(seed=3){this.seed=seed;this.state='IDLE';this.emotion='CALM'}
+ update(state,emotion){this.state=state||'IDLE';this.emotion=emotion||'CALM'}
+ pose(tm){return{bob:Math.sin(tm/520+this.seed)*.8,sway:Math.sin(tm/680+this.seed)*.7,blink:((tm/760+this.seed)%5)<.08,hand:Math.sin(tm/260+this.seed),tremor:Math.sin(tm/54+this.seed)*1.2}}
+}
+const clerkActor=new CharacterSprite(3);
+function pxp(a,b,w,h,c){R(Math.round(a),Math.round(b),w,h,c)}
+function pe(px,py,col,sick,tfm,tm,sd){
+ const active=tfm||sick,emo=tfm?'FEAR':sick?'PAIN':cur&&cur.found?'SUSPICIOUS':'CALM';clerkActor.update(cur&&cur.lv?'TALKING':'IDLE',emo);const z=clerkActor.pose(tm),bob=z.bob,sway=z.sway,trem=active?z.tremor:0;
+ const skin=tfm?'#6f9a5a':sick?'#b4b98a':'#d9a066',ink='#17151a',hair=tfm?'#18251b':'#241a14',shirt=col||'#3b6ea5',dark='#1a2027',light='#dfe9e7';px-=14;
+ /* contact shadow */pxp(px+3,py+70,24,3,'rgba(0,0,0,.38)');
+ /* legs and shoes */pxp(px+8+sway,py+55+bob,7,14,dark);pxp(px+18-sway,py+55+bob,7,14,dark);pxp(px+5+sway,py+68+bob,11,4,'#16171b');pxp(px+18-sway,py+68+bob,11,4,'#16171b');
+ /* torso, collar, badge */pxp(px+4+sway,py+24+bob,25,32,shirt);pxp(px+8+sway,py+25+bob,17,3,light);pxp(px+14+sway,py+29+bob,6,6,shirt===' #a5476b'?'#f0c47a':'#e8b04a');pxp(px+21+sway,py+35+bob,4,8,'#d9edf0');
+ /* independently posed arms */let writing=cur&&cur.rq&&tm%500<330;let ay=py+30+bob;if(writing){pxp(px-2+sway,ay+5,8,8,shirt);pxp(px+25+sway,ay+6,8,7,shirt);pxp(px+28+sway,ay+10,7,3,skin)}else{pxp(px-3+sway,ay+4,7,18,shirt);pxp(px+28-sway,ay+3,7,18,shirt);pxp(px-4+sway,ay+20,7,4,skin);pxp(px+28-sway,ay+20,7,4,skin)}
+ /* neck and head */pxp(px+12+sway+trem,py+18+bob,9,9,skin);pxp(px+5+sway+trem,py+1+bob,23,20,skin);pxp(px+3+sway+trem,py+3+bob,27,7,hair);pxp(px+5+sway+trem,py-1+bob,19,5,hair);pxp(px+2+sway+trem,py+8+bob,4,7,skin);pxp(px+26+sway+trem,py+8+bob,4,7,skin);
+ /* eyebrows, eyes, nose, mouth: emotion is readable at pixel scale */let brow=emo==='FEAR'?-2:emo==='SUSPICIOUS'?2:0;pxp(px+8+sway+trem,py+8+bob,5,2,ink);pxp(px+19+sway+trem,py+8+bob,5,2,ink);if(z.blink){pxp(px+9+sway+trem,py+11+bob,4,1,ink);pxp(px+20+sway+trem,py+11+bob,4,1,ink)}else{pxp(px+9+sway+trem,py+10+bob+brow,3,3,emo==='FEAR'?'#d9453d':ink);pxp(px+20+sway+trem,py+10+bob+brow,3,3,emo==='FEAR'?'#d9453d':ink)}pxp(px+15+sway+trem,py+12+bob,3,3,'#9b5e4d');pxp(px+12+sway+trem,py+(emo==='FEAR'?16:emo==='PAIN'?15:16)+bob,9,emo==='FEAR'?3:2,emo==='FEAR'?'#321016':'#7a3b2a');
+ if(tfm){pxp(px+2+sway,py+22+bob,4,2,'#d9453d');pxp(px+25+sway,py+25+bob,3,2,'#d9453d');}
+}
+function scene(tm){tick(tm);let d=Math.min(Math.max(day-1,0),4),lab=day>=12,bk=O.bl>now(),sx=day>=10?Math.round(Math.sin(tm/70)*(day>=13?1:0)):0;
+ R(0,0,320,110,lab?'#1d3a40':CL[d]);R(0,110,320,70,lab?'#16262b':FL[d]);for(let i=0;i<320;i+=20)R(i,110,1,70,'rgba(0,0,0,.18)');
+ R(70,30,32,40,'#e2d8b8');R(72,32,28,6,'#a33');for(let i=0;i<4;i++)R(72,42+i*6,20+(i*5%8),2,'#7a6');R(110,34,22,28,'#3a4a5a');R(112,36,18,10,'#9ab');
+ R(2,28,26,62,'#46525a');for(let j=0;j<4;j++){R(4,30+j*15,22,13,'#5a6872');R(13,35+j*15,4,2,'#222')}if(O.ac)R(4,45,22,13,'#111');
+ R(30,22,24,24,'#3a2a1a');R(32,24,20,20,'#f0ead8');let ca=tm/1000;R(41,26,2,9,'#222');R(41,34,7,2,'#222');
+ R(170,6,14,9,'#333');if((tm/400|0)%2&&day<12)R(172,8,2,2,'#f33');
+ R(290,36,26,76,'#4a3a2a');R(293,40,20,68,'#5d4a36');let dsh=day>=6&&day<=14?(Math.random()<.2?1:0):0,dw=O.dr.o?10:20;R(293+dsh,40,dw,68,'#6d563e');R(307,76,3,3,'#c9a');R(296,28,14,6,day>=10?'#d33':'#3c9');if(O.bk||G.lock&&day>=7)R(282,82,34,22,'#6a4a2a');
+ R(200,16,78,56,'#2a2118');x.save();x.beginPath();x.rect(200,20,70,48);x.clip();R(200,20,70,48,SK[d]);
+ for(let i=0;i<7;i++){let h=14+(i*13%22);R(200+i*10,68-h,9,h,'#27303a');if(d<3&&i%2)R(203+i*10,68-h+4,2,2,'#f2d56b')}R(200,56,70,12,'#3a3a40');
+ if(day<6){for(let i=0;i<3;i++){let px=200+((tm/45*(1+i*.3)+i*30)%90)-10;R(px,57,3,8,'#111');}let cx=200+((tm/20)%110)-20;R(cx,60,14,6,'#c33');R(cx+2,58,8,3,'#8ab')}
+ else{let n=Math.min(7,day-3);for(let i=0;i<n;i++){let px=200+((tm/70*(.4+i*.12)+i*19)%90)-10,py=56+(((tm/200)|0)+i)%2,tl=Math.round(Math.sin(tm/150+i)*2);R(px,py,4,9,'#2b3a2b');R(px+tl,py-3,4,4,'#6f9a5a');R(px+1,py-2,1,1,'#f33')}}
+ if(G.amb&&day>=7){let ax=200+((tm/15)%120)-30;R(ax,58,18,8,'#eee');R(ax+7,57,4,2,(tm/150|0)%2?'#f33':'#33f')}
+ if(day>=3)for(let i=0;i<12;i++)R(200+(i*37+tm/20)%70,20+(i*29+tm/6)%46,1,4,'rgba(200,220,255,.5)');
+ if(day>=9){R(224,22,14,10,'rgba(60,50,50,.7)');R(232,18,12,9,'rgba(60,50,50,.6)')}x.restore();R(234,20,2,48,'#2a2118');R(200,43,70,2,'#2a2118');
+ let fa=tm/(day>=10?300:120);R(150,2,4,8,'#333');for(let k=0;k<2;k++){R(152+Math.cos(fa+k*Math.PI)*34-14,10,28,3,'#555')}
+ let fl=day>=2&&Math.sin(tm/57)*Math.sin(tm/13)>.6+(.15*(4-d));R(100,0,120,5,O.lt&&!bk&&!fl?'#f5f7e0':'#555');
+ let q=Math.max(0,5-Math.floor(d*1.4)-ST.gone);for(let i=0;i<q;i++)qp(14+i*20,tm,i);
+ if(day>=13)R(8,100,6,3,'#b33');
+ if(cur){let cx=150,t0=now()-cur.t0;if(cur.lv)cx=150+(now()-cur.lv)/5;else if(t0<900)cx=300-150*t0/900;if(cx<300)pe(cx,50,cur.col,cur.sick&&!tf?cur.sick:0,tf,tm,3)}
+ R(70,100,180,14,'#5b3a22');R(70,100,180,3,'#8a5a34');R(80,114,160,66,'#3b2616');
+ R(82,130,26,22,'#6a4a2a');R(92,134,6,2,'#222');if(O.dw)R(84,126,22,6,'#e9dfbf');
+ let sc=O.sc;R(74,92,34,8,'#b9b9a8');if(sc.s=='scan'){R(74,84,34,6,'#a0a090');R(76+((now()-sc.t)/1200)*30,93,2,6,'#7ff')}else R(74,90,34,3,'#a0a090');if(day>=9)R(78,94,26,3,'#d9a22a');
+ let ms=O.pc.s;R(110,124,50,32,'#1a1d22');R(113,127,44,22,bk?'#050505':ms=='sleep'?'#0c1014':ms=='load'?'#1c3a4a':day>=11&&!G.share?'#3a1c1c':'#2c6c8c');if(ms=='load')R(125,136,((tm/100)%20)|0,3,'#9fd');R(130,156,10,4,'#222');
+ let pr=O.pr,sh=pr.sh?Math.round(Math.sin(tm/20)*2):0;R(258+sh,92,38,22,'#c9c4b5');R(258+sh,90,38,4,'#9a968a');R(262+sh,96,3,3,pr.s=='jam'?'#f33':pr.s=='idle'?'#3c3':'#fb3');R(264+sh,100,26,3,'#222');
+ if(pr.s=='roll')for(let i=0;i<4;i++)R(268+i*6+sh,100,2,3,(tm/80|0)%2?'#555':'#999');
+ if(pr.s=='out'||pr.s=='done'){let h=pr.s=='done'?16:Math.min(16,(now()-pr.t)/100);R(270+sh,92-h,22,h,pr.doc&&pr.doc.ev&&pr.doc.ev[0]=='u'?'#f6e9c9':'#fff');for(let j=0;j<h/4;j++)R(272+sh,94-h+j*4,14,1,'#999')}
+ if(pr.s=='jam')R(272,88,18,8,'#ddd');
+ let ph=O.ph,ps=ph.s=='ring'?Math.round(Math.sin(tm/25)*1):0;R(170+ps,130,14,7,'#222');if(ph.s=='ring'&&(tm/200|0)%2)R(176,128,3,3,'#f55');
+ R(190,128,10,12,'#c9e6f2');R(191,130+Math.min(4,day/4|0),8,5,'#a0522d');R(212,132,22,10,'#aa2b2b');
+ for(let i=0;i<Math.min(8,2+day);i++)R(176+(i%4)*6,142-(i>>2)*3,10,3,'#e9dfbf');
+ if(day>=8)for(let i=0;i<5;i++)R(90+i*37%160,164+(i*7%9),12,2,'#e9dfbf');
+ if(day>=9)R(62,92,6,16,'#d9a22a');
+ if(ST.inf&&day>=10){R(140+Math.round(Math.sin(tm/60)*2),166,16,10,'#b4b98a')}
+ R(0,115+(day>=9?14:0),0,0,'#000');
+ let ov=O.lt?Math.min(.55,d*.1):.55;if(bk)ov=.85;x.fillStyle='rgba(0,0,0,'+ov+')';x.fillRect(0,0,320,180);
+ if(day>=10||tf){x.fillStyle='rgba(220,30,30,'+(.1+.08*Math.sin(tm/120))+')';x.fillRect(0,0,320,180)}
+ if(hov&&HB[hov]){let h=HB[hov];R(h[0],h[1],6,1,'#ff0');R(h[0],h[1],1,6,'#ff0');R(h[0]+h[2]-6,h[1]+h[3]-1,6,1,'#ff0');R(h[0]+h[2]-1,h[1]+h[3]-6,1,6,'#ff0')}
+ if(day==0){R(0,0,320,180,'#0a0c10');x.fillStyle='#e8b04a';x.font='bold 18px monospace';x.textAlign='center';x.fillText('CIVIL REGISTRY',160,76);x.fillStyle='#d9453d';x.font='bold 14px monospace';x.fillText('THE LAST FILE',160,96);x.textAlign='left'}
+ if(sx)cv.style.transform='translate('+sx+'px,0)';else cv.style.transform=''}
+function hit(e){let r=cv.getBoundingClientRect(),px=(e.clientX-r.left)*320/r.width,py=(e.clientY-r.top)*180/r.height;for(let k in HB){let h=HB[k];if(px>=h[0]&&px<=h[0]+h[2]&&py>=h[1]&&py<=h[1]+h[3])return k}return null}
+cv.addEventListener('pointermove',e=>{hov=hit(e)});cv.addEventListener('pointerdown',e=>{let k=hit(e);if(k)touch(k)});
+let l2=document.createElement('div');l2.id='lg2';document.querySelector('.cw').after(l2);let dv=document.createElement('div');dv.id='db';document.body.appendChild(dv);
+menu();
+</script><script>
+/* FINAL POLISH LAYER — additive systems; the original story and systems remain intact. */
+(()=>{
+ const fx=document.getElementById('fx'),fxc=fx.getContext('2d'),pulse=document.getElementById('pulse');
+ let bits=[],last=performance.now(),quiet=0;
+ const msg=(ar,en)=>{if(pulse)pulse.innerHTML='<strong>◈ '+(L==='ar'?ar:en)+'</strong>'};
+ const burst=(x,y,color='#e8b04a',n=8)=>{for(let i=0;i<n;i++)bits.push({x,y,vx:(Math.random()-.5)*1.8,vy:(Math.random()-.8)*1.8,life:18+Math.random()*18,c:color,s:1+Math.random()*2})};
+ const ambient=()=>{if(!day)return;if(day>=3&&Math.random()<.45)bits.push({x:195+Math.random()*75,y:18+Math.random()*45,vx:-.08,vy:.25,life:34,c:day>=10?'#799b9b':'#d6c28e',s:1});if(day>=9&&Math.random()<.18)burst(255,66,'#d9453d',3)};
+ function draw(t){let dt=Math.min(32,t-last);last=t;fxc.clearRect(0,0,320,180);ambient();for(let i=bits.length-1;i>=0;i--){let b=bits[i];b.x+=b.vx*dt/16;b.y+=b.vy*dt/16;b.vy+=.015*dt/16;b.life-=dt/16;if(b.life<=0){bits.splice(i,1);continue}fxc.globalAlpha=Math.min(1,b.life/10);fxc.fillStyle=b.c;fxc.fillRect(Math.round(b.x),Math.round(b.y),Math.ceil(b.s),Math.ceil(b.s))}fxc.globalAlpha=1;requestAnimationFrame(draw)}requestAnimationFrame(draw);
+ const oldTouch=window.touch;window.touch=function(k){const h=HB[k];if(h)burst(h[0]+h[2]/2,h[1]+h[3]/2,k==='ph'?'#f55':k==='pr'?'#f6e9c9':'#e8b04a',10);msg(k==='pr'?'الطابعة استجابت بحركة وصوت.':'تم لمس عنصر تفاعلي في المكتب.',k==='pr'?'The printer responded with motion and sound.':'An office object responded to your touch.');return oldTouch(k)};
+ document.addEventListener('click',e=>{if(e.target.tagName==='BUTTON'){burst(160,100,'#9fe',4);quiet=0}},true);
+ const oldSay=window.say;window.say=function(h){oldSay(h);quiet=0};
+ setInterval(()=>{if(day&&day!==15){quiet++;if(quiet>3)msg(day>=10?'الصمت يزداد... راقب المكتب قبل القرار.':'راقب المكتب: بعض الأشياء تتحرك بدون طلب.',day>=10?'The silence deepens... observe before deciding.':'Observe the office: some things move without being asked.')}},3500);
+ window.addEventListener('resize',()=>{fx.width=320;fx.height=180});
+ msg('جاهز لبدء الوردية.','Ready to start the shift.');
+})();
+</script></body></html>
