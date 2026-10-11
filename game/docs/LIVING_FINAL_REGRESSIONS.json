@@ -1,0 +1,504 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/tmp/echoes-work/echoes-beneath-the-seal/node_modules/.bin/playwright",
+      "test",
+      "--project=desktop-chromium",
+      "--project=touch-landscape",
+      "-g",
+      "complete representative|language switches|statistics stay opt-in|world effects"
+    ],
+    "configFile": "/tmp/echoes-work/echoes-beneath-the-seal/playwright.config.js",
+    "rootDir": "/tmp/echoes-work/echoes-beneath-the-seal/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/echoes-work/echoes-beneath-the-seal/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "desktop-chromium",
+        "name": "desktop-chromium",
+        "testDir": "/tmp/echoes-work/echoes-beneath-the-seal/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 150000
+      },
+      {
+        "outputDir": "/tmp/echoes-work/echoes-beneath-the-seal/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "touch-portrait",
+        "name": "touch-portrait",
+        "testDir": "/tmp/echoes-work/echoes-beneath-the-seal/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 150000
+      },
+      {
+        "outputDir": "/tmp/echoes-work/echoes-beneath-the-seal/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "touch-landscape",
+        "name": "touch-landscape",
+        "testDir": "/tmp/echoes-work/echoes-beneath-the-seal/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 150000
+      },
+      {
+        "outputDir": "/tmp/echoes-work/echoes-beneath-the-seal/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "small-touch",
+        "name": "small-touch",
+        "testDir": "/tmp/echoes-work/echoes-beneath-the-seal/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 150000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/tmp/echoes-work/echoes-beneath-the-seal/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "name": "desktop-chromium",
+        "testDir": "/tmp/echoes-work/echoes-beneath-the-seal/tests/browser",
+        "snapshotDir": "/tmp/echoes-work/echoes-beneath-the-seal/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 150000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173/echoes-beneath-the-seal/",
+          "headless": true,
+          "launchOptions": {
+            "executablePath": "/usr/local/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell",
+            "args": [
+              "--no-sandbox"
+            ]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop-chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/tmp/echoes-work/echoes-beneath-the-seal/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "name": "touch-landscape",
+        "testDir": "/tmp/echoes-work/echoes-beneath-the-seal/tests/browser",
+        "snapshotDir": "/tmp/echoes-work/echoes-beneath-the-seal/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 150000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173/echoes-beneath-the-seal/",
+          "headless": true,
+          "launchOptions": {
+            "executablePath": "/usr/local/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell",
+            "args": [
+              "--no-sandbox"
+            ]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "deviceScaleFactor": 2,
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "touch-landscape"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 3,
+    "webServer": {
+      "command": "node tools/serve.mjs",
+      "url": "http://127.0.0.1:4173/echoes-beneath-the-seal/",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "game.spec.js",
+      "file": "game.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "complete representative campaign, all daily films, physical clues, four deductions and true ending",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-chromium",
+              "projectName": "desktop-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 54322,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T03:42:42.578Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8739d194ba1dcb8a2e3d-9922a5457439685e3c22",
+          "file": "game.spec.js",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "language switches, save resumes exact citizen, no cropping, audio control and fresh run diversity",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-chromium",
+              "projectName": "desktop-chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 12466,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T03:42:42.590Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8739d194ba1dcb8a2e3d-3ac589e974672c673a44",
+          "file": "game.spec.js",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "complete representative campaign, all daily films, physical clues, four deductions and true ending",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "touch-landscape",
+              "projectName": "touch-landscape",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 42162,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T03:42:56.474Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8739d194ba1dcb8a2e3d-430c58744271b75bc6eb",
+          "file": "game.spec.js",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "language switches, save resumes exact citizen, no cropping, audio control and fresh run diversity",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "touch-landscape",
+              "projectName": "touch-landscape",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 8282,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T03:42:58.857Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8739d194ba1dcb8a2e3d-88667a3f062068982db1",
+          "file": "game.spec.js",
+          "line": 32,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "living.spec.js",
+      "file": "living.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "world effects, reactive character states and mixer settings survive reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-chromium",
+              "projectName": "desktop-chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 10368,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T03:42:42.494Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bd89475727597cefc3dd-9dc4714774a2df2c95e6",
+          "file": "living.spec.js",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "world effects, reactive character states and mixer settings survive reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "touch-landscape",
+              "projectName": "touch-landscape",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 10133,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T03:43:07.460Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bd89475727597cefc3dd-581599259d1d5488e289",
+          "file": "living.spec.js",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "stats.spec.js",
+      "file": "stats.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "statistics stay opt-in, read real aggregates, and show an honest empty sample",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-chromium",
+              "projectName": "desktop-chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 4571,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T03:42:53.070Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ae71e5981dded4f6b793-e54aa385fa3d03d57fff",
+          "file": "stats.spec.js",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "title": "statistics stay opt-in, read real aggregates, and show an honest empty sample",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "touch-landscape",
+              "projectName": "touch-landscape",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3227,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T03:43:17.607Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ae71e5981dded4f6b793-517a5689767dfecf7985",
+          "file": "stats.spec.js",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-11T03:42:41.770Z",
+    "duration": 57215.632,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

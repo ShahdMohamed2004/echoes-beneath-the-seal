@@ -1,6 +1,6 @@
 [package]
 name = "echoes-beneath-the-seal"
-version = "2.0.0"
+version = "2.2.0"
 description = "Echoes Beneath the Seal by Shahd Mohamed"
 authors = ["Shahd Mohamed"]
 edition = "2021"

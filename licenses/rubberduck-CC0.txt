@@ -1,0 +1,9 @@
+100 CC0 SFX #2 — rubberduck
+Source: https://opengameart.org/content/100-cc0-sfx-2
+Download: https://opengameart.org/sites/default/files/sfx_100_v2.zip
+The source asset page identifies this pack as CC0 (verified 2026-10-11).
+CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/
+Legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+No additional restrictions stated on the source page. Attribution retained voluntarily.
+The download contains audio files; this provenance notice is not a claim that a separate license file was packaged with it.
+Selected files and all modifications are listed in audio-manifest.json.

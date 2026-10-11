@@ -14,6 +14,7 @@ export class Physics{
  move(p){if(this.held)this.target=p;}
  release(cancel=false){const b=this.held;if(b){if(cancel)b.vx=b.vy=0;b.vx=clamp(b.vx,-180,180);b.vy=clamp(b.vy,-180,180);b.omega=cancel?0:clamp(b.vx/500,-.8,.8);b.vz=0;}this.held=null;this.target=null;return b;}
  place(id,x,y){const b=this.body(id);if(b){b.x=x;b.y=y;b.px=x;b.py=y;b.vx=b.vy=b.omega=0;b.angle=0;b.z=0;}}
+ disturb(x,y,energy){for(const b of this.bodies){if(!PAPER.includes(b.id)||b===this.held)continue;const dx=b.x-x,dy=b.y-y,d=Math.hypot(dx,dy);if(d<100){const force=Math.min(8,energy/22)*(1-d/100)/b.mass;b.vx+=dx/(d||1)*force;b.vy+=dy/(d||1)*force;b.z=Math.min(2,b.z+force*.05);}}}
  rotate(id,angle=.12){const b=this.body(id);if(b)b.angle=clamp(b.angle+angle,-.55,.55);}
  snapshot(){return this.bodies.map(({id,x,y,angle})=>({id,x,y,angle}));}
  update(dt,wind=0){this.acc+=Math.min(.1,Math.max(0,dt));let steps=0;while(this.acc>=STEP&&steps++<12){this.step(STEP,wind);this.acc-=STEP;}}

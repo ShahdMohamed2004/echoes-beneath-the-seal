@@ -1,0 +1,6 @@
+OwlishMedia Sound Effects Pack
+https://opengameart.org/content/sound-effects-pack
+Source page lists CC0 1.0 Universal, verified 2026-10-11.
+https://creativecommons.org/publicdomain/zero/1.0/
+No attribution requirement or additional restriction is stated. Credit retained voluntarily.
+Six selected nonverbal human sound excerpts are listed with original filenames and modifications in audio-manifest.json. No unselected pack sounds are redistributed.

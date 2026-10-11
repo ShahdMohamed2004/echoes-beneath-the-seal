@@ -15,10 +15,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -26,10 +26,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -37,10 +37,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -48,10 +48,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -59,10 +59,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -70,10 +70,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -81,10 +81,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -92,10 +92,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -103,10 +103,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -127,10 +248,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -138,10 +259,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -149,10 +270,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -160,10 +281,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -171,10 +292,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -182,10 +303,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -193,10 +314,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -204,10 +325,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -215,10 +336,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -239,10 +481,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -250,10 +492,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -261,10 +503,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -272,10 +514,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -283,10 +525,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -294,10 +536,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -305,10 +547,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -316,10 +558,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -327,10 +569,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -351,10 +714,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -362,10 +725,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -373,10 +736,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -384,10 +747,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -395,10 +758,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -406,10 +769,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -417,10 +780,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -428,10 +791,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -439,10 +802,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -463,10 +947,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -474,10 +958,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -485,10 +969,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -496,10 +980,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -507,10 +991,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -518,10 +1002,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -529,10 +1013,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -540,10 +1024,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -551,10 +1035,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -575,10 +1180,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -586,10 +1191,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -597,10 +1202,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -608,10 +1213,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -619,10 +1224,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -630,10 +1235,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -641,10 +1246,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -652,10 +1257,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -663,10 +1268,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -687,10 +1413,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -698,10 +1424,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -709,10 +1435,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -720,10 +1446,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -731,10 +1457,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -742,10 +1468,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -753,10 +1479,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -764,10 +1490,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -775,10 +1501,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -799,10 +1646,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -810,10 +1657,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -821,10 +1668,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -832,10 +1679,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -843,10 +1690,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -854,10 +1701,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -865,10 +1712,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -876,10 +1723,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -887,10 +1734,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -911,10 +1879,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -922,10 +1890,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -933,10 +1901,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -944,10 +1912,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -955,10 +1923,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -966,10 +1934,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -977,10 +1945,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -988,10 +1956,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -999,10 +1967,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -1023,10 +2112,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1034,10 +2123,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1045,10 +2134,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1056,10 +2145,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1067,10 +2156,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1078,10 +2167,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1089,10 +2178,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1100,10 +2189,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1111,10 +2200,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -1135,10 +2345,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1146,10 +2356,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1157,10 +2367,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1168,10 +2378,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1179,10 +2389,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1190,10 +2400,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1201,10 +2411,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1212,10 +2422,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1223,10 +2433,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -1247,10 +2578,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1258,10 +2589,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1269,10 +2600,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1280,10 +2611,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1291,10 +2622,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1302,10 +2633,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1313,10 +2644,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1324,10 +2655,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1335,10 +2666,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -1359,10 +2811,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1370,10 +2822,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1381,10 +2833,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1392,10 +2844,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1403,10 +2855,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1414,10 +2866,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1425,10 +2877,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1436,10 +2888,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1447,10 +2899,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -1471,10 +3044,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1482,10 +3055,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1493,10 +3066,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1504,10 +3077,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1515,10 +3088,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1526,10 +3099,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1537,10 +3110,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1548,10 +3121,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1559,10 +3132,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -1583,10 +3277,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1594,10 +3288,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1605,10 +3299,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1616,10 +3310,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1627,10 +3321,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1638,10 +3332,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1649,10 +3343,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1660,10 +3354,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1671,10 +3365,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }
@@ -1695,10 +3510,10 @@
       "row": 1,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1706,10 +3521,10 @@
       "row": 2,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1717,10 +3532,10 @@
       "row": 3,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1728,10 +3543,10 @@
       "row": 4,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1739,10 +3554,10 @@
       "row": 5,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1750,10 +3565,10 @@
       "row": 6,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": false
     },
@@ -1761,10 +3576,10 @@
       "row": 7,
       "frames": 4,
       "durations": [
-        160,
-        130,
         180,
-        150
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1772,10 +3587,10 @@
       "row": 8,
       "frames": 4,
       "durations": [
-        600,
-        200,
-        600,
-        180
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     },
@@ -1783,10 +3598,131 @@
       "row": 9,
       "frames": 4,
       "durations": [
-        650,
-        450,
-        650,
-        200
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "turn": {
+      "row": 10,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "hesitate": {
+      "row": 11,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "confused": {
+      "row": 12,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "anger": {
+      "row": 13,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "relief": {
+      "row": 14,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "cough": {
+      "row": 15,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "listen": {
+      "row": 16,
+      "frames": 4,
+      "durations": [
+        350,
+        220,
+        300,
+        220
+      ],
+      "loop": true
+    },
+    "handover": {
+      "row": 17,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": false
+    },
+    "earlyInfected": {
+      "row": 18,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "infected": {
+      "row": 19,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
+      ],
+      "loop": true
+    },
+    "hybrid": {
+      "row": 20,
+      "frames": 4,
+      "durations": [
+        180,
+        120,
+        180,
+        220
       ],
       "loop": true
     }

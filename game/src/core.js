@@ -1,4 +1,5 @@
 import {deskState} from './desk-state.js';
+import {contextualLine} from './dialogue.js';
 import {CITIZENS,DECISIONS,DEDUCTIONS,REQUIREMENTS,GREETINGS,EVIDENCE} from './content.js';
 export const SAVE_KEY='echoes.save.v3',BACKUP_KEY='echoes.save.backup',META_KEY='echoes.meta.v1';
 export const clone=v=>JSON.parse(JSON.stringify(v));
@@ -6,7 +7,7 @@ export function hash(s){let n=2166136261;for(const c of String(s)){n^=c.charCode
 export function random(s){s.rng=(s.rng+0x6D2B79F5)>>>0;let t=s.rng;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;}
 export function fresh(seed=Date.now(),lang='ar',meta={}){
  seed=Number.isFinite(seed)?seed>>>0:hash(seed);
- const s={desk:deskState(),version:3,seed,rng:seed,day:1,caseIndex:0,phase:'intro',cinematic:1,ending:null,language:lang==='en'?'en':'ar',evidence:{},deductions:{},flags:{},inventory:{food:1,med:0},infection:0,relationships:{hala:0,yasser:0,salim:0},history:{},previousVariants:meta.lastVariants||{},cases:{},inspected:{},asked:{},requirements:{},world:{lights:true,lamp:true,drawer:false,door:false,window:false,archive:false,barricade:false,noise:0,threat:0,printer:'idle',printJob:null,printed:[],imprint:0,transform:0},props:null,log:[],settings:{master:.65,music:.25,ambience:.4,effects:.65,muted:false,reducedMotion:false,captions:true,textSize:1}};
+ const s={desk:deskState(),version:3,seed,rng:seed,day:1,caseIndex:0,phase:'intro',cinematic:1,ending:null,language:lang==='en'?'en':'ar',evidence:{},deductions:{},flags:{},inventory:{food:1,med:0},infection:0,relationships:{hala:0,yasser:0,salim:0},history:{},previousVariants:meta.lastVariants||{},cases:{},inspected:{},asked:{},requirements:{},world:{lights:true,lamp:true,drawer:false,door:false,window:false,archive:false,barricade:false,noise:0,threat:0,printer:'idle',printJob:null,printed:[],imprint:0,transform:0},props:null,log:[],settings:{master:.65,music:.25,ambience:.4,effects:.65,characters:.5,creatures:.5,cinematics:.55,visualQuality:'auto',muted:false,reducedMotion:false,captions:true,textSize:1}};
  for(let d=1;d<=4;d++)s.cases[d]=CITIZENS[d-1].c.map((c,i)=>({...clone(c),actor:['hassan','omkarim','mona','ashraf','sameh','nadia','mahmoud'][[0,2,4,6][d-1]+i]}));
  // Optional clerical case varies in both its request and correct administrative response.
  const extra=[
@@ -16,8 +17,8 @@ export function fresh(seed=Date.now(),lang='ar',meta={}){
  s.cases[2].splice(1,0,clone(extra[Math.floor(random(s)*extra.length)]));
  return s;
 }
-export function variant(s,key,count){if(s.history[key]!==undefined)return s.history[key];let choices=Array.from({length:count},(_,i)=>i).filter(i=>count<2||i!==s.previousVariants[key]);const v=choices[Math.floor(random(s)*choices.length)];s.history[key]=v;return v;}
-export function greeting(s,c){const pool=GREETINGS[c.actor]||GREETINGS.default;return pool[variant(s,c.id,pool.length)];}
+export function variant(s,key,count){if(Number.isInteger(s.history[key])&&s.history[key]>=0&&s.history[key]<count)return s.history[key];let choices=Array.from({length:count},(_,i)=>i).filter(i=>count<2||i!==s.previousVariants[key]);const v=choices[Math.floor(random(s)*choices.length)];s.history[key]=v;return v;}
+export function greeting(s,c){const pool=GREETINGS[c.actor]||GREETINGS.default,line=pool[variant(s,c.id,pool.length)],context=contextualLine(s,c.actor,variant);return context?{ar:line.ar+' '+context.ar,en:line.en+' '+context.en}:line;}
 export function currentCase(s){return s.cases[s.day]?.[s.caseIndex]||null;}
 export function addEvidence(s,id){if(s.evidence[id])return false;s.evidence[id]={day:s.day};return true;}
 export function requirement(s,id){if(REQUIREMENTS[s.day]===id){s.requirements[s.day]=true;if(s.phase==='investigate')s.phase='choice';return true;}return false;}
@@ -73,6 +74,7 @@ export function validateSave(q){
  if(!Number.isInteger(q.day)||q.day<1||q.day>15)throw Error('Invalid day');
  const phases=['intro','citizen','result','dayEnd','investigate','choice','decisionResult','final','ending'];
  if(!phases.includes(q.phase))throw Error('Invalid phase');
+ const allowed=q.day<5?['intro','citizen','result','dayEnd']:q.day<15?['investigate','choice','decisionResult']:['final','ending'];if(!allowed.includes(q.phase))throw Error('Invalid phase for day');
  const s=fresh(clamp(q.seed,0,4294967295),q.language);s.seed=q.seed>>>0;s.rng=(q.rng??s.seed)>>>0;s.day=q.day;s.phase=q.phase;
  s.caseIndex=Math.floor(clamp(q.caseIndex,0,(s.cases[q.day]?.length||1)-1));
  // Cases are regenerated from the saved seed; imported narrative text is never trusted.
@@ -89,10 +91,10 @@ export function validateSave(q){
  s.ending=['true','truth','silence','surv','inf','sac','loop','file'].includes(q.ending)?q.ending:null;if(s.phase==='ending'&&!s.ending)throw Error('Missing ending');
  s.choiceIndex=q.choiceIndex===1?1:0;
  if(q.lastChoice){const c=currentCase(s);if(c)s.lastChoice={choice:['ok','no','fl'].includes(q.lastChoice.choice)?q.lastChoice.choice:'ok',correct:!!q.lastChoice.correct,explanation:c.w};}
- for(const k of ['master','music','ambience','effects'])s.settings[k]=clamp(q.settings?.[k],0,1,s.settings[k]);for(const k of ['muted','reducedMotion','captions'])s.settings[k]=!!q.settings?.[k];s.settings.textSize=clamp(q.settings?.textSize,.9,1.4,1);
+ for(const k of ['master','music','ambience','effects','characters','creatures','cinematics'])s.settings[k]=clamp(q.settings?.[k],0,1,s.settings[k]);for(const k of ['muted','reducedMotion','captions'])s.settings[k]=!!q.settings?.[k];s.settings.textSize=clamp(q.settings?.textSize,.9,1.4,1);
  s.log=Array.isArray(q.log)?q.log.slice(-200).filter(v=>v&&typeof v==='object').map(v=>({day:Math.floor(clamp(v.day,1,15)),choice:['ok','no','fl',0,1,2,'0','1','2'].includes(v.choice)?v.choice:'',...(v.case?{case:String(v.case).slice(0,30),correct:!!v.correct}:{}),...(v.flag&&/^[a-z0-9]+$/.test(v.flag)?{flag:v.flag}:{})})):[];
  const d=s.desk,p=q.desk;if(p&&typeof p==='object'){d.caseId=String(p.caseId||'').slice(0,40);for(const k of ['opened','folderOpen','torchOn'])d[k]=typeof p[k]==='boolean'?p[k]:d[k];d.mode=['ok','no','fl'].includes(p.mode)?p.mode:'ok';d.wet=clamp(p.wet,0,1);d.ink=clamp(p.ink,.3,1,1);d.credits=Math.floor(clamp(p.credits,0,999,2));d.examined=boolMap(p.examined);d.upgrades=Object.fromEntries(['lens','light','tray'].filter(k=>p.upgrades?.[k]).map(k=>[k,true]));d.settled=boolMap(p.settled);d.marks=Array.isArray(p.marks)?p.marks.slice(-50).filter(m=>m&&['ok','no','fl'].includes(m.choice)).map(m=>({caseId:String(m.caseId).slice(0,40),x:clamp(m.x,-58,58),y:clamp(m.y,-69,69),angle:clamp(m.angle,-1.2,1.2),choice:m.choice,dry:clamp(m.dry,0,1),bleed:clamp(m.bleed,0,1)})):[];d.audit=Array.isArray(p.audit)?p.audit.slice(-45).filter(a=>a&&a.type==='purchase'&&['lens','light','tray'].includes(a.id)).map(a=>({day:Math.floor(clamp(a.day,1,15)),type:'purchase',id:a.id,amount:-Math.floor(clamp(-a.amount,0,5))})):[];d.reports=Array.isArray(p.reports)?p.reports.slice(-15).filter(r=>r&&Number.isInteger(r.day)&&r.day>=1&&r.day<=15).map(r=>({day:r.day,...Object.fromEntries(['approved','rejected','flagged','correct','mistakes','reward','credits','food','med'].map(k=>[k,Math.floor(clamp(r[k],0,999))])),infected:!!r.infected,evidence:(Array.isArray(r.evidence)?r.evidence:[]).filter(k=>!!EVIDENCE[k]),decisions:(Array.isArray(r.decisions)?r.decisions:[]).filter(k=>typeof k==='string'&&/^[a-z0-9]+$/.test(k)).slice(0,3),purchases:(Array.isArray(r.purchases)?r.purchases:[]).filter(k=>['lens','light','tray'].includes(k))})):[];}
- s.settings.lensSensitivity=clamp(q.settings?.lensSensitivity,.5,1.5,1);
+ s.settings.lensSensitivity=clamp(q.settings?.lensSensitivity,.5,1.5,1);s.settings.visualQuality=['auto','low','high'].includes(q.settings?.visualQuality)?q.settings.visualQuality:'auto';
  return s;
 }
 export function migrateLegacy(q){const s=fresh(2026,q.L);s.day=q.day;s.phase=q.day<5?'intro':q.day===15?'final':'investigate';s.cinematic=0;s.flags=boolMap(q.G);s.evidence=boolMap(q.ST.ev);s.inventory={food:clamp(q.ST.inv?.food,0,99),med:clamp(q.ST.inv?.med,0,99)};s.infection=q.ST.inf?1:0;s.requirements=boolMap(q.ST.rd);s.inspected=boolMap(q.ST.look);

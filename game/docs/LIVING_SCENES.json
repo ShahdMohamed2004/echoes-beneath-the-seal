@@ -1,0 +1,213 @@
+{
+  "checkedAt": "2026-10-11T03:40:40.159Z",
+  "count": 23,
+  "scenes": [
+    {
+      "day": 1,
+      "heard": [
+        "step-0",
+        "paper-0"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 2,
+      "heard": [
+        "printer",
+        "printer"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 3,
+      "heard": [
+        "step-1",
+        "thunder"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 4,
+      "heard": [
+        "creature-field",
+        "breath"
+      ],
+      "errors": [],
+      "phase": "reaction"
+    },
+    {
+      "day": 5,
+      "heard": [
+        "paper-0",
+        "lock"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 6,
+      "heard": [
+        "step-0",
+        "door"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 7,
+      "heard": [
+        "hum",
+        "thunder"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 8,
+      "heard": [
+        "paper-1",
+        "paper-1"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 9,
+      "heard": [
+        "metal-0",
+        "lock"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 10,
+      "heard": [
+        "creature-field",
+        "glass-break"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 11,
+      "heard": [
+        "hum",
+        "switch"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 12,
+      "heard": [
+        "breath",
+        "creature-field"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 13,
+      "heard": [
+        "printer",
+        "paper-0"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 14,
+      "heard": [
+        "echo",
+        "echo"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 15,
+      "heard": [
+        "paper-0",
+        "paper-1"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 15,
+      "ending": "true",
+      "heard": [
+        "echo"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 15,
+      "ending": "truth",
+      "heard": [
+        "echo"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 15,
+      "ending": "silence",
+      "heard": [
+        "echo"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 15,
+      "ending": "surv",
+      "heard": [
+        "echo"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 15,
+      "ending": "inf",
+      "heard": [
+        "echo"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 15,
+      "ending": "sac",
+      "heard": [
+        "echo"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 15,
+      "ending": "loop",
+      "heard": [
+        "echo"
+      ],
+      "errors": [],
+      "phase": "document"
+    },
+    {
+      "day": 15,
+      "ending": "file",
+      "heard": [
+        "echo"
+      ],
+      "errors": [],
+      "phase": "document"
+    }
+  ]
+}

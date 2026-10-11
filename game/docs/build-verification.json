@@ -1,9 +1,9 @@
 {
-  "files": 67,
-  "bytes": 4376994,
+  "files": 83,
+  "bytes": 5816999,
   "assetIntegrity": "passed",
   "secretPatternScan": "passed (selected known key formats, not a full security audit)",
-  "productionBudget": "<5MB",
+  "productionBudget": "<6MB",
   "paths": "relative project subpath",
-  "time": "2026-10-11T02:48:24.989Z"
+  "time": "2026-10-11T03:51:02.998Z"
 }
