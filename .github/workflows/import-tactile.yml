@@ -1,0 +1,83 @@
+name: Import and publish verified Tactile Edition
+on:
+  workflow_dispatch:
+    inputs:
+      bundle_url:
+        description: Workspace download URL for the approved bundle
+        required: true
+      sha256:
+        description: SHA-256 of the exact approved ZIP
+        required: true
+      expected_head:
+        description: Expected main commit; stops if someone else updated it
+        required: true
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch and validate approved bundle
+        env:
+          BUNDLE_URL: ${{ inputs.bundle_url }}
+          BUNDLE_SHA: ${{ inputs.sha256 }}
+          EXPECTED_HEAD: ${{ inputs.expected_head }}
+        run: |
+          python - <<'PY'
+          import os,hashlib,io,zipfile,pathlib,subprocess,urllib.request,re
+          expected=os.environ['EXPECTED_HEAD']
+          if not re.fullmatch('[0-9a-f]{40}',expected):raise RuntimeError('Invalid expected head')
+          if subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()!=expected:raise RuntimeError('Branch advanced; review before importing')
+          url=os.environ['BUNDLE_URL']
+          if not url.startswith('https://'):raise RuntimeError('HTTPS download required')
+          req=urllib.request.Request(url,headers={'User-Agent':'EchoesVerifiedImport/2.1'})
+          with urllib.request.urlopen(req,timeout=60) as response:data=response.read(25000001)
+          if len(data)>25000000:raise RuntimeError('Bundle size limit')
+          if hashlib.sha256(data).hexdigest()!=os.environ['BUNDLE_SHA']:raise RuntimeError('Bundle hash mismatch')
+          archive=zipfile.ZipFile(io.BytesIO(data))
+          if sum(f.file_size for f in archive.infolist())>60000000:raise RuntimeError('Unpacked size limit')
+          for entry in archive.infolist():
+              path=pathlib.PurePosixPath(entry.filename)
+              if path.is_absolute() or '..' in path.parts or '.git' in path.parts or '.github' in path.parts or (entry.external_attr>>16)&0o170000==0o120000:raise RuntimeError('Unexpected archive path')
+          archive.extractall('.')
+          print('Approved archive verified and extracted')
+          PY
+      - name: Verify shared source and production output
+        working-directory: game
+        run: |
+          npm ci
+          npm test
+          npm run build
+          node tools/verify-build.mjs
+          npm audit --audit-level=high
+      - name: Commit verified source and web bundle
+        env:
+          BUNDLE_SHA: ${{ inputs.sha256 }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html game.js styles.css sw.js manifest.webmanifest privacy.html assets licenses ASSET_CREDITS.md AUDIO_CREDITS.md COPYRIGHT.md LICENSE asset-manifest.json audio-manifest.json game README.md .nojekyll
+          git commit -m "Release Tactile Edition 2.1: physical desk, investigation and verified opt-in outcomes" -m "Approved bundle SHA-256: $BUNDLE_SHA"
+          git push origin HEAD:main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: game/dist
+      - name: Publish tested game
+        id: deployment
+        uses: actions/deploy-pages@v4
