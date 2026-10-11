@@ -1,0 +1,24 @@
+{
+  "version": "2.2.0",
+  "releaseCommit": "7bd66aabdefc7afc895e2fad19c679c4da4c1bfc",
+  "gameURL": "https://shahdmohamed2004.github.io/echoes-beneath-the-seal/",
+  "releaseURL": "https://github.com/ShahdMohamed2004/echoes-beneath-the-seal/releases/tag/v2.2.0",
+  "workflowRun": "https://github.com/ShahdMohamed2004/echoes-beneath-the-seal/actions/runs/38109688217",
+  "verifiedAt": "2026-10-11T03:53:00Z",
+  "productionFiles": 83,
+  "byteIdenticalFiles": 83,
+  "serviceWorkerRevision": "echoes-58a7ddc24589",
+  "publicBrowserTests": {"passed": 14, "failed": 0, "skipped": 0, "flaky": 0, "viewports": ["desktop-chromium", "touch-portrait"]},
+  "downloads": [
+    {"file": "index.html", "bytes": 8747904, "sha256": "e69b84d44171d0dd640a287c201b39bafb63b5891c1c35905700cc4adc625d6b", "downloadedAndMatched": true},
+    {"file": "Echoes-Living-Web-2.2.0.zip", "bytes": 4304440, "sha256": "71a5517b6ad87dc6930aff506539627a6c8c8b3bee51736a53001abc1b059999", "downloadedAndMatched": true}
+  ],
+  "localCoreTestsPassed": 27,
+  "localBrowserMatrixPassed": 56,
+  "finalSaveRegressionTestsPassed": 8,
+  "storyScenesRendered": 23,
+  "localAudioFilesDecoded": 36,
+  "productionTestVotes": 0,
+  "studentTablesAccessed": false,
+  "nativeCompiledOrDeviceTested": false
+}
