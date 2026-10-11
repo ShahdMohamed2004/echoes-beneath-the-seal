@@ -1,0 +1,1 @@
+export function deskState(){return{format:1,caseId:null,marks:[],opened:true,folderOpen:false,torchOn:true,mode:'ok',examined:{},wet:0,ink:1,smudge:0,credits:2,upgrades:{},settled:{},reports:[],audit:[]};}

@@ -1,0 +1,14 @@
+import {readFile,writeFile,readdir,mkdir} from 'node:fs/promises';import path from 'node:path';import {createHash} from 'node:crypto';
+const out=process.argv[2]||path.resolve('artifacts/Echoes-Archive-Edition.html'),assets={};
+async function walk(dir){for(const e of await readdir(dir,{withFileTypes:true})){const f=path.join(dir,e.name);if(e.isDirectory())await walk(f);else{const rel=path.relative('dist',f).split(path.sep).join('/');const type={'.png':'image/png','.wav':'audio/wav','.ttf':'font/ttf','.json':'application/json'}[path.extname(f)];if(type)assets[rel]='data:'+type+';base64,'+(await readFile(f)).toString('base64');}}}
+await walk('dist/assets');let html=await readFile('dist/index.html','utf8'),css=await readFile('dist/styles.css','utf8');css=css.replace(/url\((["']?)(?:\.\/)?(assets\/[^)"']+)\1\)/g,(_,q,p)=>`url("${assets[p]||p}")`);
+const code=('globalThis.ECHO_PREVIEW=true;globalThis.ECHO_ASSETS='+JSON.stringify(assets)+';\n'+await readFile('dist/game.js','utf8')).replace(/<\/script/gi,'<\\/script');const hash=createHash('sha256').update(code).digest('base64');
+html=html.replace(/<meta http-equiv="Content-Security-Policy"[^>]*>/,`<meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; script-src 'sha256-${hash}'; style-src 'unsafe-inline'; img-src 'self' data:; media-src data: blob:; connect-src 'self' data: https://fpkwnkjtkctwextxkyfb.supabase.co; font-src data:; object-src 'none'; base-uri 'none'">`).replace(/<link rel="manifest"[^>]*>/,'').replace('<link rel="stylesheet" href="./styles.css">','<style>'+css+'</style>').replaceAll('./assets/ui/icon-192.png',assets['assets/ui/icon-192.png']).replace('href="./" aria-label','href="#" aria-label').replace('<script type="module" src="./game.js"></script>',()=>'<script type="module">'+code+'</script>');
+const esc=v=>v.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+let legal='<details id="preview-licenses" style="max-width:1000px;margin:20px auto;padding:20px"><summary>Credits and licenses / الاعتمادات والتراخيص</summary>';
+for(const f of ['ASSET_CREDITS.md','AUDIO_CREDITS.md','COPYRIGHT.md',...(await readdir('dist/licenses')).map(f=>'licenses/'+f)])legal+='<h3>'+esc(f)+'</h3><pre style="white-space:pre-wrap;font:12px/1.6 monospace">'+esc(await readFile('dist/'+f,'utf8'))+'</pre>';
+legal+='</details>';
+const privacy=(await readFile('dist/privacy.html','utf8')).split('<body>')[1].split('</body>')[0].replace(/<a href="\.\/">[^<]*<\/a>/,'');
+legal+='<details id="privacy-preview" style="max-width:1000px;margin:20px auto;padding:20px"><summary>Privacy / الخصوصية</summary>'+privacy+'</details>';
+html=html.replace('href="./privacy.html"','href="#privacy-preview"').replace('</body>',()=>legal+'</body>');
+await mkdir(path.dirname(out),{recursive:true});await writeFile(out,html);console.log(JSON.stringify({standalone:out,bytes:Buffer.byteLength(html),embeddedAssets:Object.keys(assets).length}));

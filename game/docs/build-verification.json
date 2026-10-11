@@ -1,0 +1,9 @@
+{
+  "files": 67,
+  "bytes": 4376994,
+  "assetIntegrity": "passed",
+  "secretPatternScan": "passed (selected known key formats, not a full security audit)",
+  "productionBudget": "<5MB",
+  "paths": "relative project subpath",
+  "time": "2026-10-11T02:48:24.989Z"
+}

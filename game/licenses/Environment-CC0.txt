@@ -1,0 +1,6 @@
+The three environment recordings listed in AUDIO_CREDITS.md were published under CC0 1.0 on their individual OpenGameArt pages.
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+- `rain-field.wav`: Kresiek The Furry; https://opengameart.org/content/amb-rain-loop-1; CC0 1.0. Trimmed, normalized and converted to mono PCM 22050 Hz. Original recording, not oscillator synthesis.
+- `wind-field.wav`: Bashar3A; https://opengameart.org/content/mild-wind-background-noise; CC0 1.0. Trimmed, normalized and converted to mono PCM 22050 Hz. Original recording, not oscillator synthesis.
+- `creature-field.wav`: iletzy; https://opengameart.org/content/ghostmonster-sounds; CC0 1.0. Trimmed, normalized and converted to mono PCM 22050 Hz. Original recording, not oscillator synthesis.

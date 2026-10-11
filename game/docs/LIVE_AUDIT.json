@@ -1,0 +1,56 @@
+{
+  "url": "https://shahdmohamed2004.github.io/echoes-beneath-the-seal/",
+  "head": "7ac4ec954e61b78703f917560eb5c7de92659b12",
+  "errors": [],
+  "anon": {
+    "aggregateStatus": 200,
+    "aggregate": [
+      {
+        "ending_key": "file",
+        "vote_count": 0,
+        "total_votes": 0
+      },
+      {
+        "ending_key": "inf",
+        "vote_count": 0,
+        "total_votes": 0
+      },
+      {
+        "ending_key": "loop",
+        "vote_count": 0,
+        "total_votes": 0
+      },
+      {
+        "ending_key": "sac",
+        "vote_count": 0,
+        "total_votes": 0
+      },
+      {
+        "ending_key": "silence",
+        "vote_count": 0,
+        "total_votes": 0
+      },
+      {
+        "ending_key": "surv",
+        "vote_count": 0,
+        "total_votes": 0
+      },
+      {
+        "ending_key": "true",
+        "vote_count": 0,
+        "total_votes": 0
+      },
+      {
+        "ending_key": "truth",
+        "vote_count": 0,
+        "total_votes": 0
+      }
+    ],
+    "directTableStatus": 401,
+    "invalidVoteStatus": 400
+  },
+  "consentDisabled": true,
+  "noRequestsBeforeConsent": true,
+  "assetFilesEmbedded": true,
+  "checkedAt": "2026-10-11T02:07:16.304Z"
+}

@@ -1,0 +1,10 @@
+{
+  "android": {
+    "identicalProductionFiles": 63,
+    "runtimeTested": false
+  },
+  "ios": {
+    "identicalProductionFiles": 63,
+    "runtimeTested": false
+  }
+}

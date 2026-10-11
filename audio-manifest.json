@@ -1,0 +1,237 @@
+{
+  "version": "2.0.0",
+  "assets": [
+    {
+      "file": "assets/audio/wood-0.wav",
+      "event": "wood",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/wood-1.wav",
+      "event": "wood",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/metal-0.wav",
+      "event": "metal",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/metal-1.wav",
+      "event": "metal",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/paper-0.wav",
+      "event": "paper",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/paper-1.wav",
+      "event": "paper",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/step-0.wav",
+      "event": "step",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/step-1.wav",
+      "event": "step",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/glass-0.wav",
+      "event": "glass",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/glass-1.wav",
+      "event": "glass",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/stamp-0.wav",
+      "event": "stamp",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/stamp-1.wav",
+      "event": "stamp",
+      "creator": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "accessDate": "2026-10-10",
+      "modifications": "Converted to mono 22050Hz PCM WAV with FFmpeg for common browser support",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/rain.wav",
+      "event": "rain",
+      "creator": "Original project sound design",
+      "source": "tools/art.py",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "accessDate": "2026-10-10",
+      "modifications": "Original seeded noise / harmonic synthesis",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/hum.wav",
+      "event": "hum",
+      "creator": "Original project sound design",
+      "source": "tools/art.py",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "accessDate": "2026-10-10",
+      "modifications": "Original seeded noise / harmonic synthesis",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/echo.wav",
+      "event": "echo",
+      "creator": "Original project sound design",
+      "source": "tools/art.py",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "accessDate": "2026-10-10",
+      "modifications": "Original seeded noise / harmonic synthesis",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/printer.wav",
+      "event": "printer",
+      "creator": "Original project sound design",
+      "source": "tools/art.py",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "accessDate": "2026-10-10",
+      "modifications": "Original seeded noise / harmonic synthesis",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/phone.wav",
+      "event": "phone",
+      "creator": "Original project sound design",
+      "source": "tools/art.py",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "accessDate": "2026-10-10",
+      "modifications": "Original seeded noise / harmonic synthesis",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/breath.wav",
+      "event": "breath",
+      "creator": "Original project sound design",
+      "source": "tools/art.py",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "accessDate": "2026-10-10",
+      "modifications": "Original seeded noise / harmonic synthesis",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/music.wav",
+      "event": "music",
+      "creator": "Original project sound design",
+      "source": "tools/art.py",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "accessDate": "2026-10-10",
+      "modifications": "Original seeded noise / harmonic synthesis",
+      "integrated": true
+    },
+    {
+      "file": "assets/audio/rain-field.wav",
+      "creator": "Kresiek The Furry",
+      "source": "https://opengameart.org/content/amb-rain-loop-1",
+      "download": "https://opengameart.org/sites/default/files/amb_rain_loop_1.wav",
+      "license": "CC0-1.0",
+      "attributionRequired": false,
+      "integration": "day 3 onwards; quieter behind closed window",
+      "sha256": "ca2724121a0a322df34612aa7598207be5eea753c0e0173eb0fa6ca7e4c3e993"
+    },
+    {
+      "file": "assets/audio/wind-field.wav",
+      "creator": "Bashar3A",
+      "source": "https://opengameart.org/content/mild-wind-background-noise",
+      "download": "https://opengameart.org/sites/default/files/wind%20background%20noise%202.wav",
+      "license": "CC0-1.0",
+      "attributionRequired": false,
+      "integration": "open window, shared environment loop",
+      "sha256": "691ed54d46f1f244d3f84eee60be939bddd8cfdbce1a0dc0e0cab65ea4cbc90c"
+    },
+    {
+      "file": "assets/audio/creature-field.wav",
+      "creator": "iletzy",
+      "source": "https://opengameart.org/content/ghostmonster-sounds",
+      "download": "https://opengameart.org/sites/default/files/Ghostmonster%20sounds_0.mp3",
+      "license": "CC0-1.0",
+      "attributionRequired": false,
+      "integration": "day 4 transformation and day 10 approach; never arbitrary jumpscares",
+      "sha256": "40c9f5f4d7bb1741e8aee42c3f5aaa30636dd71dff41ba5e79211e16ea0c3607"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "desktop",
+    "errors": [],
+    "remoteRequests": 0,
+    "decodedAudio": 19,
+    "mode": "standalone file URL, offline embedded assets"
+  },
+  {
+    "name": "phone",
+    "errors": [],
+    "remoteRequests": 0,
+    "decodedAudio": 19,
+    "mode": "standalone file URL, offline embedded assets"
+  }
+]

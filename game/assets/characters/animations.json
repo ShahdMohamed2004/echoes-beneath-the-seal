@@ -1,0 +1,1794 @@
+{
+  "hassan": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "omkarim": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "mona": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "ashraf": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "sameh": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "nadia": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "mahmoud": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "hala": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "yasser": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "samir": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "researcher": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "player": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "coworker": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "manager": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "echo": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  },
+  "citizen": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "durations": [
+        550,
+        500,
+        550,
+        120
+      ],
+      "loop": true
+    },
+    "talk": {
+      "row": 1,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "walk": {
+      "row": 2,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "reach": {
+      "row": 3,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "fear": {
+      "row": 4,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "pain": {
+      "row": 5,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "transform": {
+      "row": 6,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": false
+    },
+    "echo": {
+      "row": 7,
+      "frames": 4,
+      "durations": [
+        160,
+        130,
+        180,
+        150
+      ],
+      "loop": true
+    },
+    "suspicion": {
+      "row": 8,
+      "frames": 4,
+      "durations": [
+        600,
+        200,
+        600,
+        180
+      ],
+      "loop": true
+    },
+    "exhaustion": {
+      "row": 9,
+      "frames": 4,
+      "durations": [
+        650,
+        450,
+        650,
+        200
+      ],
+      "loop": true
+    }
+  }
+}

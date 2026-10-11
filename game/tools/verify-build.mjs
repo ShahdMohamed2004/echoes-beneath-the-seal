@@ -1,0 +1,10 @@
+import {readFile,readdir,stat} from 'node:fs/promises';import assert from 'node:assert/strict';import path from 'node:path';import {CAST} from '../src/content.js';
+const root='dist';let files=0,bytes=0;
+async function walk(dir){let paths=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())paths.push(...await walk(p));else paths.push(p);}return paths;}
+for(const file of await walk(root)){const data=await readFile(file);files++;bytes+=data.length;assert.ok(!file.endsWith('.map'),'No production source maps');if(/\.(?:html|js|css|json|md|txt)$/.test(file)){const t=data.toString();assert.ok(!/gh[pousr]_[A-Za-z0-9]{30,}|AKIA[A-Z0-9]{16}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/.test(t),'Potential secret in '+file);}}
+for(const manifest of ['asset-manifest.json','audio-manifest.json']){const data=JSON.parse(await readFile(path.join(root,manifest)));for(const a of data.assets){assert.ok(!a.file.includes('..'));const b=await readFile(path.join(root,a.file));assert.ok(b.length>100);if(a.file.endsWith('.png')){assert.equal(b.readUInt32BE(16),a.width);assert.equal(b.readUInt32BE(20),a.height);}if(a.file.endsWith('.wav')){assert.equal(b.toString('ascii',0,4),'RIFF');assert.equal(b.toString('ascii',8,12),'WAVE');}}}
+for(const c of CAST)await stat(path.join(root,'assets/characters/'+c[0]+'.png'));
+const manifest=JSON.parse(await readFile(path.join(root,'manifest.webmanifest')));assert.equal(manifest.scope,'./');assert.equal(manifest.start_url,'./');assert.ok(bytes<5_000_000,'Production asset budget 5MB');
+const js=await readFile(path.join(root,'game.js'),'utf8');assert.ok(!js.includes('sourceMappingURL='));
+const report={files,bytes,assetIntegrity:'passed',secretPatternScan:'passed (selected known key formats, not a full security audit)',productionBudget:'<5MB',paths:'relative project subpath',time:new Date().toISOString()};await writeReport(report);console.log(JSON.stringify(report,null,2));
+async function writeReport(report){const{writeFile}=await import('node:fs/promises');await writeFile('docs/build-verification.json',JSON.stringify(report,null,2));}

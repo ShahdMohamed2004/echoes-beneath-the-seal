@@ -1,0 +1,8 @@
+{
+  "appId":"com.shahdmohamed.echoesbeneaththeseal",
+  "appName":"Echoes Beneath the Seal",
+  "webDir":"dist",
+  "server":{"androidScheme":"https"},
+  "android":{"allowMixedContent":false},
+  "ios":{"contentInset":"never","preferredContentMode":"mobile"}
+}

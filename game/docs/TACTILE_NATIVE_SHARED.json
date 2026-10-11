@@ -1,0 +1,14 @@
+{
+  "android": {
+    "files": 67,
+    "mismatches": [],
+    "compiled": false,
+    "deviceTested": false
+  },
+  "ios": {
+    "files": 67,
+    "mismatches": [],
+    "compiled": false,
+    "deviceTested": false
+  }
+}

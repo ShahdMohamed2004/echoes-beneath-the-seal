@@ -1,0 +1,545 @@
+{
+  "version": "2.1.0",
+  "assets": [
+    {
+      "file": "assets/environments/office.png",
+      "width": 480,
+      "height": 270,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "role": "Layered scene plate"
+    },
+    {
+      "file": "assets/environments/street.png",
+      "width": 480,
+      "height": 270,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "role": "Layered scene plate"
+    },
+    {
+      "file": "assets/environments/archive.png",
+      "width": 480,
+      "height": 270,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "role": "Layered scene plate"
+    },
+    {
+      "file": "assets/environments/corridor.png",
+      "width": 480,
+      "height": 270,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "role": "Layered scene plate"
+    },
+    {
+      "file": "assets/environments/hospital.png",
+      "width": 480,
+      "height": 270,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "role": "Layered scene plate"
+    },
+    {
+      "file": "assets/environments/lab.png",
+      "width": 480,
+      "height": 270,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "role": "Layered scene plate"
+    },
+    {
+      "file": "assets/environments/memory.png",
+      "width": 480,
+      "height": 270,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "role": "Layered scene plate"
+    },
+    {
+      "file": "assets/characters/hassan.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/omkarim.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/mona.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/ashraf.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/sameh.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/nadia.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/mahmoud.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/hala.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/yasser.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/samir.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/researcher.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/player.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/coworker.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/manager.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/echo.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/characters/citizen.png",
+      "width": 192,
+      "height": 800,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 48,
+      "frameHeight": 80,
+      "pivot": [
+        24,
+        76
+      ],
+      "animations": [
+        "idle",
+        "talk",
+        "walk",
+        "reach",
+        "fear",
+        "pain",
+        "transform",
+        "echo",
+        "suspicion",
+        "exhaustion"
+      ]
+    },
+    {
+      "file": "assets/props/desk.png",
+      "width": 160,
+      "height": 48,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "frameWidth": 40,
+      "frameHeight": 48
+    },
+    {
+      "file": "assets/ui/icon-192.png",
+      "width": 192,
+      "height": 192,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "role": "App icon"
+    },
+    {
+      "file": "assets/ui/icon-512.png",
+      "width": 512,
+      "height": 512,
+      "creator": "Original project artwork",
+      "license": "Copyright 2026 Shahd Mohamed",
+      "source": "tools/art.py",
+      "integrated": true,
+      "role": "App icon"
+    },
+    {
+      "file": "assets/fonts/NotoSansArabic.ttf",
+      "creator": "The Noto Project Authors",
+      "source": "https://github.com/google/fonts/tree/main/ofl/notosansarabic",
+      "license": "SIL Open Font License 1.1",
+      "integrated": true
+    }
+  ]
+}

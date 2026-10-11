@@ -1,24 +1,41 @@
-# أصداء تحت الختم — Archive Edition
+# Echoes Beneath the Seal — Tactile Edition 2.1
 
-**نسخة اللعبة المنشورة:** https://shahdmohamed2004.github.io/echoes-beneath-the-seal/
+Created and Designed by Shahd Mohamed
 
-استبدلت الصفحة الرئيسية بالنسخة المرفقة **Archive Edition**، مع الاحتفاظ بالنسخة السابقة في [`legacy.html`](./legacy.html) للرجوع إليها.
+Copyright © 2026 Shahd Mohamed. All rights reserved.
 
-## ما تتضمنه هذه النسخة
+The production browser/PWA files are at the repository root. Editable source, tests, licenses, native wrappers and reproducible tools are in [`game/`](./game/). The earlier original page remains at [`legacy.html`](./legacy.html).
 
-- 15 وردية بقصة تحقيق تتدرج من ملفات مدنية متناقضة إلى مشروع **Echo** وملف اللاعب، مع نهايات تتأثر بالأدلة والقرارات.
-- شخصيات بكسلية أصلية متحركة، أصوات ومؤثرات محلية، وتفاعل مع أدوات المكتب.
-- مقارنة بطاقات الهوية بسجل النظام، فحص الماسح، ملفات الأرشيف، دفتر التحقيق والاستنتاجات.
-- تحريك الورق فعليًا ووضعه تحت مصباح الأثر؛ والطباعة والتقاط الأوراق من المكتب.
-- واجهة متصلة على سطح المكتب، وتخطيط متجاوب للهاتف، باللغتين العربية والإنجليزية.
-- حفظ التقدم محليًا على جهاز اللاعب؛ لا تُرسل اختيارات النهايات إلى الإحصاءات المشتركة قبل موافقة اللاعب صراحةً.
+## Play
 
-## إحصاءات النهايات
+https://shahdmohamed2004.github.io/echoes-beneath-the-seal/
 
-تتيح شاشة النهاية مشاركة فئة النهاية اختياريًا بعد تفعيل خانة الموافقة والضغط على زر المشاركة. لا ترسل اللعبة الاسم أو ملف الحفظ أو معرّف لاعب؛ وتُمنع المشاركة المكررة محليًا لكل نهاية ما دام حفظ المتصفح موجودًا. تُعرض أعداد ونسب المشاركات الموافقة، لا تعدادًا مضمونًا لأشخاص فريدين أو تصويتًا مقاومًا للتلاعب؛ إذ يمكن تجاوز منع التكرار المحلي بطلبات مباشرة. وقد تعالج Supabase بيانات اتصال فنية مثل عنوان IP؛ والتصويت المسجل يُدمج في المجموع ولا يمكن حذفه منفردًا. إذا لم يوافق اللاعب، فلا تُرسل اللعبة أي طلب إحصاء.
+Drag the seal onto an unfolded request. Choose its face before dragging, or use a decision button to position and press the same seal accessibly. Drag the lens and inspection light over small writing; compare, rotate, unfold and align papers. Samir’s key fits the archive lock. Daily reports record real decisions and issue fictional equipment vouchers.
 
-تخزن الخدمة مجاميع فقط في جدول `echo_ending_stats`، وتعرضها وتستقبل التصويت عبر دالتي RPC محدودتين. جدول اللعبة محمي بـRLS ولا يملك عميل المتصفح صلاحية قراءة أو تعديل الجدول مباشرة. ملف إعادة إنشاء المخطط موجود في [`supabase/migrations/20261011_echo_ending_stats_optin.sql`](./supabase/migrations/20261011_echo_ending_stats_optin.sql). هذه الميزة مستقلة عن أي جداول أخرى في مشروع Supabase.
+The fifteen-day mystery, Project Echo, Patient 07, evidence deductions and eight endings are preserved. Save export/import stays local; existing Archive Edition saves and the older `crlf2` format migrate without restarting the story.
 
-## الأصول والتراخيص
+## Build and test
 
-الملف `index.html` نسخة HTML مكتفية بذاتها، ويحتوي الأصول المحلية ومعلومات الاعتماد وسياسة الخصوصية ضمن اللعبة. راجع قسمي **Credits and licenses** و**Privacy** داخل الصفحة قبل تعديل الأصول أو إعادة توزيعها.
+```sh
+cd game
+npm ci
+npm test
+npm run build
+npx playwright install chromium
+npm run test:browser
+node tools/preview.mjs ../Echoes-Tactile-index.html
+```
+
+Serve `game/dist/` for a modular production build. The preview tool produces a self-contained HTML with graphics, fonts, sound, credits and privacy text embedded. The published app and native wrappers use the same source. Generated native projects are not signed or device-tested releases.
+
+## Verified statistics boundary
+
+The previous published build was audited: its Supabase ending-only RPC returned actual aggregates, denied direct table reads and rejected invalid endings. That interface and its historical totals remain intact. The new detailed outcome panel is separately opt-in, with fixed Boolean outcomes, random per-run retry receipts and gateway-address throttling. It displays actual eligible denominators and labels samples below five as insufficient. It cannot prove unique players or defeat a determined client.
+
+Only game-specific objects were queried or created. Student tables are outside the scope. No service-role key or privileged token is shipped. See [`game/docs/STATS_VERIFICATION.json`](./game/docs/STATS_VERIFICATION.json), the game-only [migration](./game/supabase/migrations/20261011_echo_run_outcomes.sql), and [privacy policy](./privacy.html).
+
+## Assets and implementation evidence
+
+22 local WAVs, 16 original character atlases with ten animation rows, seven scene backgrounds, local Arabic font and original desk rendering. No commercial reference-game assets or reference-video sounds were copied. See [audio credits](./AUDIO_CREDITS.md), [asset credits](./ASSET_CREDITS.md) and the [interaction checklist](./game/docs/TACTILE_CHECKLIST.md).
+
+The exact test results and platform limitations are recorded in [`game/docs/TACTILE_RELEASE.md`](./game/docs/TACTILE_RELEASE.md). Real-device, Safari/Firefox, voice acting and signed native/store acceptance are not claimed.

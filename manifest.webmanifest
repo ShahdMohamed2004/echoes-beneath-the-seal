@@ -1,0 +1,6 @@
+{
+  "id":"./", "name":"Echoes Beneath the Seal", "short_name":"Echoes", "description":"An atmospheric bilingual investigation. Created and Designed by Shahd Mohamed.",
+  "start_url":"./", "scope":"./", "display":"standalone", "orientation":"any", "background_color":"#0d1b23", "theme_color":"#142c34", "lang":"ar", "dir":"rtl",
+  "icons":[{"src":"./assets/ui/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},{"src":"./assets/ui/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}],
+  "categories":["games","entertainment"]
+}

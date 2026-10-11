@@ -1,0 +1,102 @@
+{
+  "checkedAt": "2026-10-11T02:29:50.848Z",
+  "readStatus": 200,
+  "rows": [
+    {
+      "metric": "ending:surv",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "ending:silence",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "ending:file",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "ending:true",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "ending:loop",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "ending:inf",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "ending:truth",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "ending:sac",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "self_found",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "patient07",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "no_review_errors",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "all_deductions",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "hala_aided",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "echo_preserved",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "yasser_aided",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "infected",
+      "positive": 0,
+      "eligible": 0
+    },
+    {
+      "metric": "supplies_shared",
+      "positive": 0,
+      "eligible": 0
+    }
+  ],
+  "badStatus": 400,
+  "transactionTests": {
+    "role": "anon",
+    "validSubmission": "passed and rolled back",
+    "duplicateReceipt": "passed and rolled back",
+    "invalidEnding": "rejected",
+    "unknownMetric": "rejected",
+    "fourthSubmissionPerMinute": "rejected",
+    "directPrivateTableRead": "rejected"
+  },
+  "studentTables": "excluded from every query and write"
+}
