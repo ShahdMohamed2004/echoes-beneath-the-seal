@@ -1,0 +1,16 @@
+{
+  "url": "https://shahdmohamed2004.github.io/echoes-beneath-the-seal/",
+  "releaseCommit": "bf2b036374d9575af074f541e82f08e487b7b66e",
+  "deploymentRun": "https://github.com/ShahdMohamed2004/echoes-beneath-the-seal/actions/runs/38106324717",
+  "checkedAt": "2026-10-11T02:50:23.958Z",
+  "files": 67,
+  "identical": 67,
+  "failures": [],
+  "revision": "echoes-cb98419e3b98",
+  "publicBrowserChecks": { "passed": 8, "failed": 0, "viewports": ["desktop-chromium", "touch-portrait"], "scenarios": ["stamp contact and persistence", "physical key and illuminated lens clue", "language and save recovery", "real read-only opt-in aggregates"] },
+  "localBrowserMatrix": { "passed": 44, "failed": 0, "skipped": 0, "flaky": 0 },
+  "corePhysicsTests": { "passed": 18, "failed": 0 },
+  "productionTestVotes": 0,
+  "studentTables": "excluded from every read and write",
+  "nativeBuildAndDeviceTesting": false
+}
